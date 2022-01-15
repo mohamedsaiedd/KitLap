@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <BrowserRouter basename="/demo/azia-react-free/template/preview">
-    <App />
+    <App  />
   </BrowserRouter>
 , document.getElementById('root'));
 

@@ -13,15 +13,15 @@
     .az-navbar-backdrop {
       visibility: visible;
       opacity: 1;
-    }
+     }
   }
 }
-
+ 
 .az-header {
   height: $az-height-header-mobile;
   background-color: #fff;
   z-index: 9 !important;
-  width:100%;
+  width:100%; 
   position: absolute !important;
   box-shadow: 0 0 30px rgba($gray-900, 0.08);
   border-bottom: 1px solid rgba($gray-900, 0.12);

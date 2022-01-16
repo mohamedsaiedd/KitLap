@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from "react"
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,21 +12,23 @@ import Typography from '@material-ui/core/Typography';
 
 
 export default function MediaCard() {
- const geter = () => (
-        fetch(
-                "https://fakestoreapi.com/products")
-                            .then((res) => res.json())
-                            .then((json) => {
-                                this.setState({
-                                    items: json,
-                                    DataisLoaded: true
-                                    
-                                });
-
-                            }) 
-        )
-            
-
+    useEffect(() => {
+        const url =  "https://fakestoreapi.com/products"
+    
+        const fetchData = async () => {
+          try {
+            const response = await fetch(url);
+            const json = await response.json();
+            console.log(json.parse());
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+    
+        fetchData();
+    }, []);
+        
+   
   return (
 
     <Card sx={{ maxWidth: 245 }}>

@@ -1,5 +1,6 @@
 import React, { Component, Suspense, lazy } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import { header } from './shared/Header'
 
 const Dashboard = lazy(() => import('./dashboard/Dashboard'))
 

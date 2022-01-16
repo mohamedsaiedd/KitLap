@@ -27,7 +27,7 @@ export class Header extends Component {
           <div className="container">
             <div className="az-header-left">
               <a href="#/" className="az-logo">
-                <span></span> Splendux
+                <span></span> CURVD
               </a>
               <a
                 id="azMenuShow"

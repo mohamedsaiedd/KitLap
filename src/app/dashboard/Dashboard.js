@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {Line, Bar, Pie } from 'react-chartjs-2';
+import  MediaCard from '../shared/ItemCard';
+import { Grid } from '@material-ui/core';
 
 export class Dashboard extends Component { 
   websiteAudienceChartData = {
@@ -404,6 +406,7 @@ export class Dashboard extends Component {
   render() {
     return (
       <div>
+
         <div className="proBanner">
           <div>
             <span className="d-flex align-items-center purchase-popup">
@@ -459,90 +462,29 @@ export class Dashboard extends Component {
               </nav>
             </div>
 
-            <div className="row row-sm mg-b-20">
-              <div className="col-lg-7 ht-lg-100p">
-                <div className="card card-dashboard-one">
-                  <div className="card-header">
-                    <div>
-                      <h6 className="card-title">Website Audience Metrics</h6>
-                      <p className="card-text">Audience to which the users belonged while on the current date range.</p>
-                    </div>
-                    <div className="btn-group">
-                      <button className="btn active">Day</button>
-                      <button className="btn">Week</button>
-                      <button className="btn">Month</button>
-                    </div>
-                  </div>{/* card-header */}
-                  <div className="card-body">
-                    <div className="card-body-top">
-                      <div>
-                        <label className="mg-b-0">Users</label>
-                        <h2>13,956</h2>
-                      </div>
-                      <div>
-                        <label className="mg-b-0">Bounce Rate</label>
-                        <h2>33.50%</h2>
-                      </div>
-                      <div>
-                        <label className="mg-b-0">Page Views</label>
-                        <h2>83,123</h2>
-                      </div>
-                      <div>
-                        <label className="mg-b-0">Sessions</label>
-                        <h2>16,869</h2>
-                      </div>
-                    </div>{/* card-body-top */}
-                    <div className="page-view-chart-wrapper">
-                      <Line data={this.websiteAudienceChartData} options={this.websiteAudienceChartOptions} />
-                    </div>{/* flot-chart-wrapper */}
-                  </div>{/* card-body */}
-                </div>{/* card */}
-              </div>{/* col */}
-              <div className="col-lg-5 mg-t-20 mg-lg-t-0">
-                <div className="row row-sm">
-                  <div className="col-sm-6">
-                    <div className="card card-dashboard-two">
-                      <div className="card-header">
-                        <h6>33.50% <i className="icon ion-md-trending-up tx-success"></i> <small>18.02%</small></h6>
-                        <p>Bounce Rate</p>
-                      </div>{/* card-header */}
-                      <div className="card-body">
-                        <div className="chart-wrapper">
-                          <Line data={this.bounceRateChartData} options={this.bounceRateChartOptions} />
-                        </div>{/* chart-wrapper */}
-                      </div>{/* card-body */}
-                    </div>{/* card */}
-                  </div>{/* col */}
-                  <div className="col-sm-6 mg-t-20 mg-sm-t-0">
-                    <div className="card card-dashboard-two">
-                      <div className="card-header">
-                        <h6>86k <i className="icon ion-md-trending-down tx-danger"></i> <small>0.86%</small></h6>
-                        <p>Total Users</p>
-                      </div>{/* card-header */}
-                      <div className="card-body">
-                        <div className="chart-wrapper">
-                          <Bar data={this.totalUsersChartData} options={this.totalUsersChartOptions} />
-                        </div>{/* chart-wrapper */}
-                      </div>{/* card-body */}
-                    </div>{/* card */}
-                  </div>{/* col */}
-                  <div className="col-sm-12 mg-t-20">
-                    <div className="card card-dashboard-three">
-                      <div className="card-header">
-                        <p>All Sessions</p>
-                        <h6>16,869 <small className="tx-success"><i className="icon ion-md-arrow-up"></i> 2.87%</small></h6>
-                        <small>The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc.</small>
-                      </div>{/* card-header */}
-                      <div className="card-body">
-                        <div className="chart d-flex align-items-end">
-                          <Bar data={this.allSessionsChartData} options={this.allSessionsChartOptions} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>{/* row */}
-              </div>{/*col */}
-            </div>{/* row */}
+            {/* comment  */}
+            <Grid container spacing={2} >
+          <Grid item xs={12} md={8} lg={4} >
+            <MediaCard />
+          </Grid>
+          <Grid item xs={12} md={8} lg={4}>
+          <MediaCard />
+          </Grid>
+          <Grid item xs={12} md={8} lg={4}>
+          <MediaCard />
+          </Grid>
+          <Grid item xs={12} md={8} lg={4}>
+          <MediaCard />
+          </Grid>
+         
+          <Grid item xs={12} md={8} lg={4}>
+          <MediaCard />
+          </Grid>
+          <Grid item xs={12} md={8} lg={4}>
+          <MediaCard />
+          </Grid>
+          </Grid>
+         
 
             <div className="row row-sm mg-b-20">
               <div className="col-lg-4">
@@ -606,6 +548,7 @@ export class Dashboard extends Component {
                 </div>{/* card */}
 
               </div>{/* col */}
+              
               <div className="col-lg-8 mg-t-20 mg-lg-t-0">
                 <div className="card card-dashboard-four">
                   <div className="card-header">
@@ -734,6 +677,7 @@ export class Dashboard extends Component {
                   </div>{/* col */}
                 </div>{/* row */}
               </div>{/* col-lg-3 */}
+              
               <div className="col-lg-7 col-xl-8 mg-t-20 mg-lg-t-0">
                 <div className="card card-table-one">
                   <h6 className="card-title">What pages do your users visit</h6>
@@ -800,7 +744,11 @@ export class Dashboard extends Component {
 
             </div>{/* row */}
           </div>{/* az-content-body */}
+         
         </div>
+
+       
+       
       </div>
     )
   }

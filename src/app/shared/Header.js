@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
+// import StorefrontIcon from '@mui/icons-material/Storefront';
 
 export class Header extends Component {
   closeMenu(e) {
@@ -54,62 +55,42 @@ export class Header extends Component {
                 <li
                   className={
                     this.isPathActive("/dashboard")
-                      ? "nav-item "
+                      ? "nav-item active "
                       : "nav-item"
                   }
                 >
                   <Link to="/" className="nav-link">
-                    <i className="typcn typcn-chart-area-outline"></i> WOMEN
+                    <i className="typcn typcn-starburst-outline"></i> 
+                   SHOP
                   </Link>
                   
                 </li>
                 <li
                   className={
-                    this.isPathActive("/dashboard")
+                    this.isPathActive("/checkout")
                       ? "nav-item active"
-                      : "nav-item"
+                      : "nav-item "
                   }
                 >
-                  <Link to="/dashboard" className="nav-link">
+                  <Link to="../checkout/checkout" className="nav-link">
                     <i className="typcn typcn-chart-area-outline"></i> MEN
                   </Link>
                   
                 </li>
-                <li className="nav-item">
-                  <Dropdown
-                    className={
-                      this.isPathActive("/general-pages")
-                        ? "nav-item active"
-                        : "nav-item"
-                    }
-                  >
-                    <Dropdown.Toggle as={"a"} className="nav-link with-sub">
-                      <i className="typcn typcn-document"></i> shoes
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu className="az-menu-sub">
-                      <Link
-                        to="/general-pages/signin"
-                        className={
-                          this.isPathActive("/general-pages/signin")
-                            ? "nav-link active"
-                            : "nav-link"
-                        }
-                      >
-                        Sign In
-                      </Link>
-                      <Link
-                        to="/general-pages/signup"
-                        className={
-                          this.isPathActive("/general-pages/signup")
-                            ? "nav-link active"
-                            : "nav-link"
-                        }
-                      >
-                        Sign Up
-                      </Link>
-                    </Dropdown.Menu>
-                  </Dropdown>
+
+                <li
+                  className={
+                    this.isPathActive("/dashboard")
+                      ? "nav-item "
+                      : "nav-item"
+                  }
+                >
+                  <Link to="/dashboard" className="nav-link">
+                    <i className="typcn typcn-chart-area-outline"></i> WOMEN
+                  </Link>
+                  
                 </li>
+              
                 <li className="nav-item">
                   <Dropdown
                     className={
@@ -207,6 +188,41 @@ export class Header extends Component {
                           </nav>
                         </div>
                       </div>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </li>
+                <li className="nav-item">
+                  <Dropdown
+                    className={
+                      this.isPathActive("/general-pages")
+                        ? "nav-item active"
+                        : "nav-item"
+                    }
+                  >
+                    <Dropdown.Toggle as={"a"} className="nav-link with-sub">
+                      <i className="typcn typcn-document"></i> SETTINGS
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className="az-menu-sub">
+                      <Link
+                        to="/general-pages/signin"
+                        className={
+                          this.isPathActive("/general-pages/signin")
+                            ? "nav-link active"
+                            : "nav-link"
+                        }
+                      >
+                        Sign In
+                      </Link>
+                      <Link
+                        to="/general-pages/signup"
+                        className={
+                          this.isPathActive("/general-pages/signup")
+                            ? "nav-link active"
+                            : "nav-link"
+                        }
+                      >
+                        Sign Up
+                      </Link>
                     </Dropdown.Menu>
                   </Dropdown>
                 </li>

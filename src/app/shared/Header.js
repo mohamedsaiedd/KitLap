@@ -54,13 +54,26 @@ export class Header extends Component {
                 <li
                   className={
                     this.isPathActive("/dashboard")
+                      ? "nav-item "
+                      : "nav-item"
+                  }
+                >
+                  <Link to="/" className="nav-link">
+                    <i className="typcn typcn-chart-area-outline"></i> WOMEN
+                  </Link>
+                  
+                </li>
+                <li
+                  className={
+                    this.isPathActive("/dashboard")
                       ? "nav-item active"
                       : "nav-item"
                   }
                 >
                   <Link to="/dashboard" className="nav-link">
-                    <i className="typcn typcn-chart-area-outline"></i> Dashboard
+                    <i className="typcn typcn-chart-area-outline"></i> MEN
                   </Link>
+                  
                 </li>
                 <li className="nav-item">
                   <Dropdown

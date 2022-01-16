@@ -404,15 +404,15 @@ export class Dashboard extends Component {
   render() {
     return (
       <div>
-        {/* <div className="proBanner">
+        <div className="proBanner">
           <div>
             <span className="d-flex align-items-center purchase-popup">
-              <p className="m-0">Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more!</p>
-              <a href="https://www.bootstrapdash.com/product/azia-react/?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" rel="noopener noreferrer" target="_blank" className="btn btn-sm btn-primary ml-auto">Check Pro Version</a>
+              <p className="m-0">Get <span>30%</span>  discount using promocode "<span>SALEWIN20</span>"</p>
+              <a href="./" rel="noopener noreferrer" target="_blank" className="btn btn-sm btn-primary ml-auto">GET PROMOCODE</a>
               <i className="typcn typcn-delete-outline bannerClose" onClick={this.toggleProBanner}></i>
             </span>
           </div>
-        </div> */}
+        </div>
         <div className="container p-md-0">
           <div className="az-content-body">
             <div className="az-dashboard-one-title">

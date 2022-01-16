@@ -16,6 +16,8 @@ const ChartJs = lazy(() => import('./charts/ChartJs'))
 
 const BasicTable = lazy(() => import('./tables/BasicTable'))
 
+const CheckOut = lazy(() => import('./checkout/CheckOut'))
+
 
 
 export class AppRoutes extends Component {
@@ -36,6 +38,9 @@ export class AppRoutes extends Component {
           <Route exact path="/ui-elements/icons" component={ Icons } />
 
           <Route exact path="/form/form-elements" component={ FormElements } />
+
+          <Route exact path="/checkout/checkout" component={ CheckOut } />
+
 
           <Route exact path="/charts/chartjs" component={ ChartJs } />
 

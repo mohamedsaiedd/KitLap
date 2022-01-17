@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect , useState  } from "react"
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -11,26 +11,28 @@ import Typography from '@material-ui/core/Typography';
 
 
 
-export default function MediaCard() {
+
+export default function MediaCard({ products }) {
+
+    const [Products, SetProducts] = useState("")
+
     useEffect(() => {
         const url =  "https://fakestoreapi.com/products"
-    
-        const fetchData = async () => {
-          try {
-            const response = await fetch(url);
-            const json = await response.json();
-            console.log(json.parse());
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-    
-        fetchData();
-    }, []);
-        
-   
-  return (
 
+        const fetchData = async () => {
+
+            const response = await fetch(url);
+            const data = await response.json();
+           
+            SetProducts(data);
+
+        };
+        fetchData();
+
+    },[]);
+    
+  return (
+      
     <Card sx={{ maxWidth: 245 }}>
       <CardMedia
         component="img"
@@ -40,7 +42,8 @@ export default function MediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+            
+        user
         </Typography>
         <Typography variant="body2" color="text.secondary">
           Lizards are a widespread group of squamate reptiles, with over 6,000

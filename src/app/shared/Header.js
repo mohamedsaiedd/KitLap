@@ -232,9 +232,9 @@ export class Header extends Component {
             <a href="https://www.bootstrapdash.com/demo/azia-react-free/documentation/documentation.html" className="az-header-search-link">
                 <i className="fas fa-file-alt"></i>
               </a>
-              <a href="#/" className="az-header-search-link">
+              {/* <a href="#/" className="az-header-search-link">
                 <i className="fas fa-search"></i>
-              </a>
+              </a> */}
               <div className="az-header-message">
                 <Link to="#/">
                   <i className="typcn typcn-messages"></i>

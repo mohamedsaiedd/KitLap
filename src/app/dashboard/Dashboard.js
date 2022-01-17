@@ -93,13 +93,11 @@ export function Dashboard  () {
 
 
             <Grid container spacing={2} >
-            <Grid   item xs={12} md={8} lg={4} >
-              <MediaCard  
-
-              products={Products}
-
-              />
-            </Grid>
+              {Products.map(product => (
+                <Grid item xs={12} md={8} lg={4} >
+                  <MediaCard product={product} />
+                </Grid>
+              ))}
              
             </Grid>
          

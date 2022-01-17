@@ -8,40 +8,28 @@ import Typography from '@material-ui/core/Typography';
 
 
 
-export default function MediaCard({ products }) {
-
-         
-        console.log(products[0]?.title)
-  
-
+export default function MediaCard({ product }) {
   return (
-      
-    <Card sx={{ maxWidth: 245 }}>
+    <Card sx={{ maxWidth: 245 }} key={product.id}>
       <CardMedia
         component="img"
         height="240"
-        image="https://static.zara.net/photos///2021/I/0/2/p/0977/304/827/2/w/1567/0977304827_1_1_1.jpg?ts=1623230878604"
+        image={product.image}
         alt="azia-social"
       />
       <CardContent>
-
-     {products.map((product , idx) => ( 
-        
-        <Typography key={idx} gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div">
             {product.title}
-        
         </Typography>
-
-     ))} 
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+        {product.description}
+
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">{product.price}</Button>
+        <Button size="small">{product.category}</Button>
       </CardActions>
     </Card>
-  );
+  )
 }

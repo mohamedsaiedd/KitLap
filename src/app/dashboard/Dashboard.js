@@ -1,10 +1,31 @@
 import React, { useState ,useEffect ,  Component } from 'react'
-import {Line, Bar, Pie } from 'react-chartjs-2';
+// import {Line, Bar, Pie } from 'react-chartjs-2';
 import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
 
 
-export function Dashboard  ({}) { 
+export function Dashboard  () { 
+
+  const [Products, SetProducts] = useState([])
+
+  useEffect(() => {
+      const url =  "https://fakestoreapi.com/products"
+
+      const fetchData = async () => {
+
+          const response = await fetch(url);
+          const data = await response.json();
+          
+          // const data = JSON.parse(data1)
+          SetProducts(data);
+
+      };
+      fetchData();
+
+  },[]);
+  
+  // console.log(Products)
+
 
   const toggleProBanner = () => {
     document.querySelector('.proBanner').classList.toggle("hide");
@@ -68,13 +89,20 @@ export function Dashboard  ({}) {
             </div>
 
             {/* comment  */}
+
+
+
             <Grid container spacing={2} >
-            <Grid item xs={12} md={8} lg={4} >
-              <MediaCard />
+            <Grid   item xs={12} md={8} lg={4} >
+              <MediaCard  
+
+              products={Products}
+
+              />
             </Grid>
+             
             </Grid>
          
-
 
             </div>{/* row */}
           </div>{/* az-content-body */}

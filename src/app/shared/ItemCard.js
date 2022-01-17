@@ -8,29 +8,12 @@ import Typography from '@material-ui/core/Typography';
 
 
 
-
-
-
-
 export default function MediaCard({ products }) {
 
-    const [Products, SetProducts] = useState("")
+         
+        console.log(products[0]?.title)
+  
 
-    useEffect(() => {
-        const url =  "https://fakestoreapi.com/products"
-
-        const fetchData = async () => {
-
-            const response = await fetch(url);
-            const data = await response.json();
-           
-            SetProducts(data);
-
-        };
-        fetchData();
-
-    },[]);
-    
   return (
       
     <Card sx={{ maxWidth: 245 }}>
@@ -41,10 +24,15 @@ export default function MediaCard({ products }) {
         alt="azia-social"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-            
-        user
+
+     {products.map((product , idx) => ( 
+        
+        <Typography key={idx} gutterBottom variant="h5" component="div">
+            {product.title}
+        
         </Typography>
+
+     ))} 
         <Typography variant="body2" color="text.secondary">
           Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica

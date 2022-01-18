@@ -81,7 +81,7 @@ export class Header extends Component {
                 <li
                   className={
                     this.isPathActive("/dashboard")
-                      ? "nav-item "
+                      ? "nav-item active"
                       : "nav-item"
                   }
                 >

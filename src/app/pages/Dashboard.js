@@ -1,5 +1,7 @@
 import React, { useState ,useEffect ,  Component } from 'react'
 // import {Line, Bar, Pie } from 'react-chartjs-2';
+import { Link, withRouter } from "react-router-dom";
+
 import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
 
@@ -74,10 +76,11 @@ export function Dashboard  () {
 
             <div className="az-dashboard-nav">
               <nav className="nav">
-                <a className="nav-link active" data-toggle="tab" href="#/" >Men</a>
-                <a className="nav-link" data-toggle="tab" href="#/">Audiences</a>
-                <a className="nav-link" data-toggle="tab" href="#/">Demographics</a>
-                <a className="nav-link" data-toggle="tab" href="#/">More</a>
+                <Link to="../pages/men" className="nav-link "> Men </Link>
+                <Link to="../pages/men" className="nav-link "> Womne </Link>
+                <Link to="../pages/men" className="nav-link "> Children </Link>
+                <Link to="../pages/men" className="nav-link active"> All </Link>
+               
               </nav>
 
               <nav className="nav">

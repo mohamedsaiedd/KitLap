@@ -72,7 +72,7 @@ export class Header extends Component {
                       : "nav-item "
                   }
                 >
-                  <Link to="../checkout/checkout" className="nav-link">
+                  <Link to="../pages/men" className="nav-link">
                     <i className="typcn typcn-chart-area-outline"></i> MEN
                   </Link>
                   

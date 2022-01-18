@@ -2,7 +2,7 @@ import React, { Component, Suspense, lazy } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { header } from './shared/Header'
 
-const Dashboard = lazy(() => import('./dashboard/Dashboard'))
+const Dashboard = lazy(() => import('./pages/Dashboard'))
 
 const Signin = lazy(() => import('./general-pages/Signin'))
 const Signup = lazy(() => import('./general-pages/Signup'))
@@ -18,6 +18,8 @@ const ChartJs = lazy(() => import('./charts/ChartJs'))
 const BasicTable = lazy(() => import('./tables/BasicTable'))
 
 const CheckOut = lazy(() => import('./checkout/CheckOut'))
+
+const MenCategory = lazy(() => import('./pages/Men'))
 
 
 
@@ -41,6 +43,8 @@ export class AppRoutes extends Component {
           <Route exact path="/form/form-elements" component={ FormElements } />
 
           <Route exact path="/checkout/checkout" component={ CheckOut } />
+
+          <Route exact path="/pages/men" component={ MenCategory } />
 
 
           <Route exact path="/charts/chartjs" component={ ChartJs } />

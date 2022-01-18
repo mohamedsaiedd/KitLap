@@ -4,20 +4,27 @@ import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
 
 
-export function Dashboard  () { 
+export function MenCategory  () { 
 
   const [Products, SetProducts] = useState([])
+  const [categoryName, setCategoryName] = useState("men's clothing");
 
   useEffect(() => {
       const url =  "https://fakestoreapi.com/products"
 
+
+     
       const fetchData = async () => {
 
           const response = await fetch(url);
           const data = await response.json();
           
           // const data = JSON.parse(data1)
+         
           SetProducts(data);
+          
+        //   setCategoryName(categoryName == Products.category ? Products.category : null  )
+          console.log(Products)
 
       };
       fetchData();
@@ -89,18 +96,26 @@ export function Dashboard  () {
             </div>
 
             {/* comment  */}
-
-
-
+            
+          
             <Grid container spacing={2} >
-              {Products.map(product => (
-                <Grid item xs={12} md={8} lg={4} >
-                  <MediaCard product={product} />
-                </Grid>
-              ))}
-             
+
+
+              {Products.filter(
+                  ({category}) => 
+                  categoryName == category
+              ).map(product => (
+                    <Grid item xs={12} md={8} lg={4} >
+                    <MediaCard product={product} />
+                    </Grid>
+                )
+                )
+              }
             </Grid>
+           
+        
          
+   
 
             </div>{/* row */}
           </div>{/* az-content-body */}
@@ -114,4 +129,4 @@ export function Dashboard  () {
  
 }
 
-export default Dashboard
+export default MenCategory

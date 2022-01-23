@@ -27,7 +27,7 @@ export class Header extends Component {
           <div className="container">
             <div className="az-header-left">
               <a href="#/" className="az-logo">
-                <span></span> CURVD
+                <span>KIT</span> LAP
               </a>
               <a
                 id="azMenuShow"
@@ -41,7 +41,7 @@ export class Header extends Component {
             <div className="az-header-menu">
               <div className="az-header-menu-header">
                 <Link to="/" className="az-logo">
-                  <span></span> Splendux
+                  <span></span> Kitlap
                 </Link>
                 <a
                   href="#/"
@@ -80,7 +80,7 @@ export class Header extends Component {
 
                 <li
                   className={
-                    this.isPathActive("/dashboard")
+                    this.isPathActive("/women")
                       ? "nav-item active"
                       : "nav-item"
                   }

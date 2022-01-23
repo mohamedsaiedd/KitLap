@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ComponentsSidebar from '../shared/ComponentsSidebar';
 import { Table } from 'react-bootstrap';
+import EnhancedTable from './EnhancedTable';
 
 export class BasicTable extends Component {
   render() {
@@ -14,7 +15,12 @@ export class BasicTable extends Component {
               <span>Tables</span>
               <span>Basic Tables</span>
             </div>
-            <h2 className="az-content-title">Basic Tables</h2>
+            <h2 className="az-content-title">Data table</h2>
+            <div className="az-content-label mg-b-5">Enhanced Table</div>
+            <p className="mg-b-20">To enable a hover state on table rows.</p>
+
+            <EnhancedTable/>
+            <hr className="mg-y-30"/>
 
             <div className="az-content-label mg-b-5">Simple Table</div>
             <p className="mg-b-20">Using the most basic table markup.</p>
@@ -216,7 +222,12 @@ export class BasicTable extends Component {
 
             <div className="ht-40"></div>
 
+            <hr className="mg-y-30"/>
+
+           
+
           </div>{/* az-content-body */}
+
         </div>{/* container */}  
       </div>
     )

@@ -61,7 +61,7 @@ export class Header extends Component {
                 >
                   <Link to="/" className="nav-link">
                     <i className="typcn typcn-starburst-outline"></i> 
-                   SHOP
+                   SHOP]
                   </Link>
                   
                 </li>

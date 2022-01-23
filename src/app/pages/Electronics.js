@@ -9,7 +9,7 @@ import { Grid } from '@material-ui/core';
 export function ElectronicsCategory  () { 
 
   const [Products, SetProducts] = useState([])
-  const [categoryName, setCategoryName] = useState("men's clothing");
+  const [categoryName, setCategoryName] = useState("electronics");
 
   useEffect(() => {
       const url =  "https://fakestoreapi.com/products"
@@ -83,9 +83,9 @@ export function ElectronicsCategory  () {
 
             <div className="az-dashboard-nav">
               <nav className="nav">
-              <Link  to="../pages/men" className={"nav-link active"}> Men </Link>
+              <Link  to="../pages/men" className={"nav-link "}> Men </Link>
                 <Link to="../pages/women" className="nav-link "> Women </Link>
-                <Link to="../pages/electronics" className="nav-link "> Electronics </Link>
+                <Link to="../pages/electronics" className="nav-link active"> Electronics </Link>
                 <Link to="../dashboard" className="nav-link "> All </Link>
               </nav>
 

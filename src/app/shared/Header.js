@@ -74,7 +74,6 @@ export class Header extends Component {
                 >
                   <Link to="../pages/men" className="nav-link">
                     <i className="typcn typcn-chart-area-outline"></i> 
-                    
                     MEN
                   </Link>
                   

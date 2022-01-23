@@ -7,21 +7,25 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
-
 export default function MediaCard({ product }) {
   return (
     <Card sx={{ maxWidth: 245 }} key={product.id}>
       <CardMedia
         component="img"
         height="240"
+
         image={product.image}
+
         alt="azia-social"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
+
             {product.title}
+
         </Typography>
         <Typography variant="body2" color="text.secondary">
+
         {product.description}
 
         </Typography>

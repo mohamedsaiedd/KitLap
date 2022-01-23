@@ -6,7 +6,7 @@ import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
 
 
-export function MenCategory  () { 
+export function ElectronicsCategory  () { 
 
   const [Products, SetProducts] = useState([])
   const [categoryName, setCategoryName] = useState("men's clothing");
@@ -116,14 +116,9 @@ export function MenCategory  () {
             </Grid>
            
         
-         
-   
-
             </div>{/* row */}
           </div>{/* az-content-body */}
          
-       
-
        
        
       </div>
@@ -131,4 +126,4 @@ export function MenCategory  () {
  
 }
 
-export default MenCategory
+export default ElectronicsCategory

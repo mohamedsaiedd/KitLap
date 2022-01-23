@@ -6,10 +6,10 @@ import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
 
 
-export function MenCategory  () { 
+export function WomenCategory  () { 
 
   const [Products, SetProducts] = useState([])
-  const [categoryName, setCategoryName] = useState("men's clothing");
+  const [categoryName, setCategoryName] = useState("women's clothing");
 
   useEffect(() => {
       const url =  "https://fakestoreapi.com/products"
@@ -83,8 +83,8 @@ export function MenCategory  () {
 
             <div className="az-dashboard-nav">
               <nav className="nav">
-              <Link  to="../pages/men" className={"nav-link active"}> Men </Link>
-                <Link to="../pages/women" className="nav-link "> Women </Link>
+              <Link  to="../pages/men" className={"nav-link "}> Men </Link>
+                <Link to="../pages/women" className="nav-link active"> Women </Link>
                 <Link to="../pages/electronics" className="nav-link "> Electronics </Link>
                 <Link to="../dashboard" className="nav-link "> All </Link>
               </nav>
@@ -131,4 +131,4 @@ export function MenCategory  () {
  
 }
 
-export default MenCategory
+export default WomenCategory

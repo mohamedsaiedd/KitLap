@@ -77,9 +77,9 @@ export function Dashboard  () {
             <div className="az-dashboard-nav">
               <nav className="nav">
                 <Link to="../pages/men" className="nav-link "> Men </Link>
-                <Link to="../pages/men" className="nav-link "> Womne </Link>
-                <Link to="../pages/men" className="nav-link "> Children </Link>
-                <Link to="../pages/men" className="nav-link active"> All </Link>
+                <Link to="../pages/women" className="nav-link "> Women </Link>
+                <Link to="../pages/electronics" className="nav-link "> Electronics </Link>
+                <Link to="./" className="nav-link active "> All </Link>
                
               </nav>
 

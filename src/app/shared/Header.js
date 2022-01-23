@@ -61,36 +61,50 @@ export class Header extends Component {
                 >
                   <Link to="/" className="nav-link">
                     <i className="typcn typcn-starburst-outline"></i> 
-                   SHOP]
+                   SHOP
                   </Link>
                   
                 </li>
                 <li
                   className={
-                    this.isPathActive("/checkout")
+                    this.isPathActive("/pages/men")
                       ? "nav-item active"
                       : "nav-item "
                   }
                 >
                   <Link to="../pages/men" className="nav-link">
-                    <i className="typcn typcn-chart-area-outline"></i> MEN
+                    <i className="typcn typcn-chart-area-outline"></i> 
+                    
+                    MEN
                   </Link>
                   
                 </li>
 
                 <li
                   className={
-                    this.isPathActive("/women")
+                    this.isPathActive("/pages/women")
                       ? "nav-item active"
                       : "nav-item"
                   }
                 >
-                  <Link to="/dashboard" className="nav-link">
+                  <Link to="/pages/women" className="nav-link">
                     <i className="typcn typcn-chart-area-outline"></i> WOMEN
                   </Link>
                   
                 </li>
-              
+
+                <li
+                  className={
+                    this.isPathActive("/pages/electronics")
+                      ? "nav-item active"
+                      : "nav-item"
+                  }
+                >
+                  <Link to="/pages/electronics" className="nav-link">
+                    <i className="typcn typcn-chart-area-outline"></i> ELECTRONICS
+                  </Link>
+                  
+                </li>
                 <li className="nav-item">
                   <Dropdown
                     className={

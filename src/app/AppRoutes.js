@@ -21,6 +21,10 @@ const CheckOut = lazy(() => import('./checkout/CheckOut'))
 
 const MenCategory = lazy(() => import('./pages/Men'))
 
+const WomenCategory = lazy(() => import('./pages/Women'))
+
+const ElectronicsCategory = lazy(() => import('./pages/Electronics'))
+
 
 
 export class AppRoutes extends Component {
@@ -45,6 +49,10 @@ export class AppRoutes extends Component {
           <Route exact path="/checkout/checkout" component={ CheckOut } />
 
           <Route exact path="/pages/men" component={ MenCategory } />
+
+          <Route exact path="/pages/women" component={ WomenCategory } />
+
+          <Route exact path="/pages/electronics" component={  ElectronicsCategory } />
 
 
           <Route exact path="/charts/chartjs" component={ ChartJs } />

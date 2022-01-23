@@ -5,35 +5,47 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from "react-router-dom";
+import { Icon } from '@iconify/react';
 
 
 export default function MediaCard({ product }) {
   return (
-    <Card sx={{ maxWidth: 245 }} key={product.id}>
+    <Link to="/dashboard">
+    <Card sx={{ maxWidth: 245 }} key={product.id} >
       <CardMedia
         component="img"
         height="240"
-
         image={product.image}
-
         alt="azia-social"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h7" component="div">
 
             {product.title}
 
         </Typography>
-        <Typography variant="body2" color="text.secondary">
 
-        {product.description}
+        <Typography variant="body2" variant="h5" color="text.secondary">
+
+        EGP {product.price} 
 
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">{product.price}</Button>
-        <Button size="small">{product.category}</Button>
+      <Button size="large" variant="outlined" > 
+        <Link to="/pages/men">         
+          <Icon  variant="h4" icon="ant-design:plus-outlined" />
+          </Link>
+        </Button>
+
+        <Typography  variant="h7" >{product.category}</Typography>
+        
+       
+       
+
       </CardActions>
     </Card>
+    </Link>
   )
 }

@@ -242,7 +242,7 @@ export class Header extends Component {
               </ul>
             </div>
             <div className="az-header-right">
-            <a href="https://www.bootstrapdash.com/demo/azia-react-free/documentation/documentation.html" className="az-header-search-link">
+            <a href="/" className="az-header-search-link">
                 <i className="fas fa-file-alt"></i>
               </a>
               {/* <a href="#/" className="az-header-search-link">

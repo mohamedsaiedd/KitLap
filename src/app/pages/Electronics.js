@@ -115,12 +115,9 @@ export function ElectronicsCategory  () {
               }
             </Grid>
            
-        
             </div>{/* row */}
           </div>{/* az-content-body */}
          
-       
-       
       </div>
     )
  

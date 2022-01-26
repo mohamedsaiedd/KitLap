@@ -258,7 +258,7 @@ export class Header extends Component {
               <Dropdown className="az-header-notification">
                 <Dropdown.Toggle as={"a"} className="new">
                   {/* <i className="typcn typcn-bell"></i> */}
-                  <Icon icon="bx:bxs-cart-alt" />
+                  <Icon className="shoppingCart" icon="mi:shopping-cart" />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <div className="az-dropdown-header mg-b-20 d-sm-none">

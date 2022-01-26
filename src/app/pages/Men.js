@@ -14,8 +14,6 @@ export function MenCategory  () {
   useEffect(() => {
       const url =  "https://fakestoreapi.com/products"
 
-
-     
       const fetchData = async () => {
 
           const response = await fetch(url);

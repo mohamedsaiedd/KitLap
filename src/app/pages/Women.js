@@ -14,8 +14,6 @@ export function WomenCategory  () {
   useEffect(() => {
       const url =  "https://fakestoreapi.com/products"
 
-
-     
       const fetchData = async () => {
 
           const response = await fetch(url);
@@ -29,6 +27,7 @@ export function WomenCategory  () {
           console.log(Products)
 
       };
+      
       fetchData();
 
   },[]);

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
+import { Icon } from '@iconify/react';
+
 // import StorefrontIcon from '@mui/icons-material/Storefront';
 
 export class Header extends Component {
@@ -242,9 +244,9 @@ export class Header extends Component {
               </ul>
             </div>
             <div className="az-header-right">
-            <a href="/" className="az-header-search-link">
+            {/* <a href="/" className="az-header-search-link">
                 <i className="fas fa-file-alt"></i>
-              </a>
+              </a> */}
               {/* <a href="#/" className="az-header-search-link">
                 <i className="fas fa-search"></i>
               </a> */}
@@ -255,21 +257,22 @@ export class Header extends Component {
               </div>
               <Dropdown className="az-header-notification">
                 <Dropdown.Toggle as={"a"} className="new">
-                  <i className="typcn typcn-bell"></i>
+                  {/* <i className="typcn typcn-bell"></i> */}
+                  <Icon icon="bx:bxs-cart-alt" />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <div className="az-dropdown-header mg-b-20 d-sm-none">
                     <a
-                      href="#/"
+                      href="#/ "
                       onClick={event => this.closeMenu(event)}
                       className="az-header-arrow"
                     >
                       <i className="icon ion-md-arrow-back"></i>
                     </a>
                   </div>
-                  <h6 className="az-notification-title">Notifications</h6>
+                  <h6 className="az-notification-title">Cart</h6>
                   <p className="az-notification-text">
-                    You have 2 unread notification
+                    You have 2 items selected
                   </p>
                   <div className="az-notification-list">
                     <div className="media new">

@@ -21,7 +21,6 @@ export class BasicTable extends Component {
 
             <EnhancedTable/>
             <hr className="mg-y-30"/>
-
             <div className="az-content-label mg-b-5">Simple Table</div>
             <p className="mg-b-20">Using the most basic table markup.</p>
 
@@ -30,7 +29,7 @@ export class BasicTable extends Component {
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Name</th> 
                     <th>Position</th>
                     <th>Salary</th>
                   </tr>

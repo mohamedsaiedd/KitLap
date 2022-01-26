@@ -17,7 +17,7 @@ export default function MediaCard({ product }) {
         component="img"
         height="240"
         image={product.image}
-        alt="azia-social"
+        alt="item"
       />
       <CardContent>
         <Typography gutterBottom variant="h7" component="div">
@@ -34,7 +34,7 @@ export default function MediaCard({ product }) {
       </CardContent>
       <CardActions>
       <Button size="large" variant="outlined" > 
-        <Link to="/pages/men">         
+        <Link to="/pages/cart">         
           <Icon  variant="h4" icon="ant-design:plus-outlined" />
           </Link>
         </Button>

@@ -337,14 +337,14 @@ export class Header extends Component {
                     </div>
                   </div>
                   <div className="dropdown-footer">
-                    <a href="#/">View All Notifications</a>
+                    <Link to="/pages/cart">View Cart</Link>
                   </div>
                 </Dropdown.Menu>
               </Dropdown>
-              <Dropdown className="az-profile-menu">
+              <Dropdown className="az-profile-menu userProfile">
                 <Dropdown.Toggle as={"a"} className="az-img-user">
                   <img
-                    src={require("../../assets/images/img1.jpg")}
+                    src={require("../../assets/images/img3.jpg")}
                     alt=""
                   ></img>
                 </Dropdown.Toggle>
@@ -361,11 +361,11 @@ export class Header extends Component {
                   <div className="az-header-profile">
                     <div className="az-img-user">
                       <img
-                        src={require("../../assets/images/img1.jpg")}
+                        src={require("../../assets/images/img3.jpg")}
                         alt=""
                       ></img>
                     </div>
-                    <h6>Aziana Pechon</h6>
+                    <h6>mohamed saied</h6>
                     <span>Premium Member</span>
                   </div>
 

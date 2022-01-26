@@ -7,9 +7,11 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
+import { Rating } from 'semantic-ui-react'
 
 
 export default function MediaCard({ product }) {
+  const [value, setValue] = React.useState(2);
   return (
     <Link to="/dashboard">
     <Card sx={{ maxWidth: 245 }} key={product.id} >
@@ -33,17 +35,16 @@ export default function MediaCard({ product }) {
         </Typography>
       </CardContent>
       <CardActions>
-      <Button size="large" variant="outlined" > 
+      {/* <Button size="large" variant="outlined" >  */}
         <Link to="/pages/cart">         
-          <Icon  variant="h4" icon="ant-design:plus-outlined" />
+          {/* <Icon  variant="h4" icon="ant-design:plus-outlined" /> */}
+           
           </Link>
-        </Button>
+        {/* </Button> */}
 
         <Typography  variant="h7" >{product.category}</Typography>
+        <Rating name="read-only" value={value} readOnly />
         
-       
-       
-
       </CardActions>
     </Card>
     </Link>

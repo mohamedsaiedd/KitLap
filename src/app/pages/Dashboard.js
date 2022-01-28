@@ -70,7 +70,7 @@ export function Dashboard  () {
                     <h6>All Categories</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
-                <a href="#/" className="btn btn-purple">Export</a>
+                <a href="#/" className="btn btn-purple">Search</a>
               </div>
             </div>{/* az-dashboard-one-title */}
 

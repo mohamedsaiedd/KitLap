@@ -139,7 +139,7 @@ export function Cart  () {
     return quantity + +product.quantity;
   }, 0);
   const subTotal = products.reduce((total, product) => {
-    return total + product.price * +product.quantity;
+    return total + product.price * +product.quantity;   
   }, 0);
   const discount = (subTotal * discountPercent) / 100;
 

@@ -46,12 +46,10 @@ export function Detailes  () {
         </div>
         <div className="container p-md-0">
           <div className="az-content-body">
-           
+         
             </div>{/* row */}
           </div>{/* az-content-body */}
          
-       
-
        
        
       </div>

@@ -50,10 +50,6 @@ export function Detailes  () {
             </div>{/* row */}
           </div>{/* az-content-body */}
          
-       
-
-       
-       
       </div>
     )
  

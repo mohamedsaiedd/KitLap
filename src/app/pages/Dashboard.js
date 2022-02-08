@@ -1,13 +1,12 @@
 import React, { useState ,useEffect ,  Component } from 'react'
 // import {Line, Bar, Pie } from 'react-chartjs-2';
-import { Link, withRouter } from "react-router-dom";
+import { Link, useParams, withRouter } from "react-router-dom";
 
 import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
 
 
 export function Dashboard  () { 
-
   const [Products, SetProducts] = useState([])
 
   useEffect(() => {
@@ -70,7 +69,7 @@ export function Dashboard  () {
                     <h6>All Categories</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
-                <a href="#/" className="btn btn-purple">Export</a>
+                <a href="#/" className="btn btn-purple">Search</a>
               </div>
             </div>{/* az-dashboard-one-title */}
 
@@ -92,15 +91,17 @@ export function Dashboard  () {
             </div>
 
             {/* comment  */}
-            
             <Grid container spacing={2} >
               {Products.map(product => (
                 <Grid item xs={12} md={8} lg={4} >
                   <MediaCard product={product} />
+                  
+            <Link to={`../pages/detailes/${product.id}`}>
+              click
+            </Link>
                 </Grid>
               ))}
             </Grid>
-         
 
             </div>{/* row */}
           </div>{/* az-content-body */}

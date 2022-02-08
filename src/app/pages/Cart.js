@@ -7,6 +7,8 @@ import { Grid } from '@material-ui/core';
 
 
 function ProductList({ products, onChangeProductQuantity, onRemoveProduct }) {
+  // console.log(products)
+  
     return (
       <section className="container">
         <ul className="products">
@@ -146,14 +148,14 @@ export function Cart  () {
   const onChangeProductQuantity = (index, event) => {
     const value = event.target.value;
     const valueInt = parseInt(value);
-    const cloneProducts = [...products];
+    const cloneProducts = [...Productsi];
   // Minimum quantity is 1, maximum quantity is 100, can left blank to input easily
   if (value === "") {
     cloneProducts[index].quantity = value;
   } else if (valueInt > 0 && valueInt < 100) {
     cloneProducts[index].quantity = valueInt;
   }
-  console.log(cloneProducts, products, Productsi);
+  console.log(Productsi );
   setProducts(cloneProducts);
 };
 
@@ -201,7 +203,7 @@ const onRemoveProduct = (i) => {
 
 
   useEffect(() => {
-      const url =  "https://fakestoreapi.com/products"
+      const url =  "https://fakestoreapi.com/carts/5"
 
       const fetchData = async () => {
 
@@ -215,7 +217,7 @@ const onRemoveProduct = (i) => {
 
   },[]);
   
-  console.log(Productsi)
+  // console.log(Productsi)
 
 
   const toggleProBanner = () => {
@@ -237,14 +239,13 @@ const onRemoveProduct = (i) => {
           <div className="az-content-body">
           <Header itemCount={itemCount} />
 
-                    {products.length > 0 ? (
+                    {Productsi.length > 0 ? (
                     <div>
                         <ProductList
-                        products={products}
+                        products={Productsi}
                         onChangeProductQuantity={onChangeProductQuantity}
                         onRemoveProduct={onRemoveProduct}
                         />
-
                         <Summary
                         subTotal={subTotal}
                         discount={discount}
@@ -263,13 +264,8 @@ const onRemoveProduct = (i) => {
             </div>{/* row */}
           </div>{/* az-content-body */}
          
-       
-
-       
-       
       </div>
     )
  
 }
-
 export default Cart

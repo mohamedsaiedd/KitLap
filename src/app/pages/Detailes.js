@@ -1,15 +1,15 @@
-import React, { useState ,useEffect ,  Component } from 'react'
+import React, { useState ,useEffect  , Component } from 'react'
 // import {Line, Bar, Pie } from 'react-chartjs-2';
-import { Link, withRouter } from "react-router-dom";
+import { Link, useParams, withRouter } from "react-router-dom";
 
 import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
 
-
 export function Detailes  () { 
 
   const [Products, SetProducts] = useState([])
-
+  const { id } = useParams(); 
+  
   useEffect(() => {
       const url =  "https://fakestoreapi.com/products"
 
@@ -26,13 +26,14 @@ export function Detailes  () {
 
   },[]);
   
-  console.log(Products)
+  // console.log(Products)
 
+  
+  
 
   const toggleProBanner = () => {
     document.querySelector('.proBanner').classList.toggle("hide");
-  }
-
+  } 
     return (
       <div>
         <div className="proBanner">
@@ -46,15 +47,20 @@ export function Detailes  () {
         </div>
         <div className="container p-md-0">
           <div className="az-content-body">
-         
-            </div>{/* row */}
+        {
+         console.log( Products.find(e => e.id.toString() === id ) , id )
+        }
+          
+          
+            
+          
+           
+           
+            </div >{/* row */}
           </div>{/* az-content-body */}
-         
-       
-       
       </div>
     )
- 
+      
 }
 
 export default Detailes

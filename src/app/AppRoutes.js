@@ -30,7 +30,6 @@ const Cart = lazy(() => import('./pages/Cart'))
 const Detailes = lazy(() => import('./pages/Detailes'))
 
 
-
 export class AppRoutes extends Component {
   render() {
     return (
@@ -50,6 +49,8 @@ export class AppRoutes extends Component {
 
           <Route exact path="/form/form-elements" component={ FormElements } />
 
+
+          
           <Route exact path="/checkout/checkout" component={ CheckOut } />
 
           <Route exact path="/pages/men" component={ MenCategory } />
@@ -60,11 +61,9 @@ export class AppRoutes extends Component {
 
           <Route exact path="/pages/cart" component={  Cart } />
 
-          <Route exact path="/pages/detailes" component={  Detailes } />
+          <Route exact path="/pages/detailes/:id" component={  Detailes } />
 
           
-
-
           <Route exact path="/charts/chartjs" component={ ChartJs } />
 
           <Route exact path="/tables/basic-table" component={ BasicTable } />

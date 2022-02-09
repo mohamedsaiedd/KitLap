@@ -107,7 +107,7 @@ export function WomenCategory  () {
                   categoryName == category
               ).map(product => (
                     <Grid item xs={12} md={8} lg={4} >
-                    <MediaCard product={product} />
+                   <MediaCard product={product} productId = {product.id}/>
                     </Grid>
                 )
                 )

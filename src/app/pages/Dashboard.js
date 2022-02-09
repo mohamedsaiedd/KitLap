@@ -93,11 +93,9 @@ export function Dashboard  () {
             <Grid container spacing={2} >
               {Products.map(product => (
                 <Grid item xs={12} md={8} lg={4} >
-                  <MediaCard product={product} />
+                  <MediaCard product={product} productId = {product.id}/>
                   
-            <Link to={`../pages/detailes/${product.id}`}>
-              click
-            </Link>
+                 
                 </Grid>
               ))}
             </Grid>

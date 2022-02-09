@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { Icon } from '@iconify/react';
+import CartIcon from '../components/cartIcon'
 
 // import StorefrontIcon from '@mui/icons-material/Storefront';
 
@@ -258,7 +259,7 @@ export class Header extends Component {
               <Dropdown className="az-header-notification">
                 <Dropdown.Toggle as={"a"} className="new">
                   {/* <i className="typcn typcn-bell"></i> */}
-                  <Icon className="shoppingCart" icon="mi:shopping-cart" />
+                  <CartIcon />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <div className="az-dropdown-header mg-b-20 d-sm-none">

@@ -339,3 +339,11 @@
     // padding: 20px;
 
   }
+
+  .az-header-message > a.new::before, .az-header-notification > a.new::before {
+    display: none;
+  }
+
+  button::after {
+    display: none;
+  }

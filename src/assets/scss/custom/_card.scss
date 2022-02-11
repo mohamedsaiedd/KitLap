@@ -17,3 +17,32 @@
    
   
 }
+
+// card element 
+.addToCartBtn {
+    height: 100%;
+    align-items: flex-end;
+    bottom: -519px !important;
+    /* top: 20px; */
+    position: relative;
+    text-align: center;
+}
+.successBtn {
+    background-color: #BD4C39 !important;
+    color: white !important;
+    margin-right: 20px;
+}
+.MuiGrid-grid-lg-4 {
+    max-width: none !important;
+}
+.cartBtn {
+    margin-right:20px !important
+}
+.gridFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.continueBtn {
+    background-color: blanchedalmond !important;
+}

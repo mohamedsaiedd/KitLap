@@ -1,6 +1,8 @@
 import React, { Component, Suspense, lazy } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import { Loader } from 'semantic-ui-react'
 import { header } from './shared/Header'
+import LoaderUi from './shared/Loader'
 
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 
@@ -33,7 +35,7 @@ const Detailes = lazy(() => import('./pages/Detailes'))
 export class AppRoutes extends Component {
   render() {
     return (
-      <Suspense fallback=''>
+      <Suspense fallback={<LoaderUi/>}>
         <Switch>
           <Route exact path="/">
             <Redirect to="/dashboard"></Redirect>

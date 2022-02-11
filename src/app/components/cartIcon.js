@@ -15,10 +15,11 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-export default function CartIcon() {
+
+export default function CartIcon({ItemCount}) {
   return (
     <IconButton aria-label="cart">
-      <StyledBadge badgeContent={4} color="secondary">
+      <StyledBadge badgeContent={ItemCount} color="secondary">
       <Icon className="shoppingCart"  icon="bi:cart" />
       </StyledBadge>
     </IconButton>

@@ -6,7 +6,7 @@ import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
 
 
-export function Dashboard  () { 
+export function Dashboard  (ItemCount) { 
   const [Products, SetProducts] = useState([])
 
   useEffect(() => {

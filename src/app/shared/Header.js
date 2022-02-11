@@ -7,6 +7,13 @@ import CartIcon from '../components/cartIcon'
 // import StorefrontIcon from '@mui/icons-material/Storefront';
 
 export class Header extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      ItemCount : 2
+    }
+}
+
   closeMenu(e) {
     e.target.closest(".dropdown").classList.remove("show");
     e.target.closest(".dropdown .dropdown-menu").classList.remove("show");
@@ -22,8 +29,11 @@ export class Header extends Component {
       document.querySelector("body").classList.remove("az-header-menu-show");
     }
   }
+  
 
   render() {
+
+
     return (
       <div>
         <div className="az-header">
@@ -259,7 +269,7 @@ export class Header extends Component {
               <Dropdown className="az-header-notification">
                 <Dropdown.Toggle as={"a"} className="new">
                   {/* <i className="typcn typcn-bell"></i> */}
-                  <CartIcon />
+                  <CartIcon ItemCount = {this.state.ItemCount} />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <div className="az-dropdown-header mg-b-20 d-sm-none">

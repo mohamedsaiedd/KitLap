@@ -10,11 +10,12 @@ import { Icon } from '@iconify/react';
 import { Rating } from 'semantic-ui-react'
 
 
+
 export default function MediaCard({ product , productId }) {
   const [value, setValue] = React.useState(2);
   return (
+
        <Link to={`../pages/detailes/${productId}`}>
-                   
     <Card sx={{ maxWidth: 245 }} key={product.id} >
       <CardMedia
         component="img"

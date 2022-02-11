@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 
 import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
-
+import axios from "axios"
 
 export function MenCategory  () { 
 
@@ -13,22 +13,12 @@ export function MenCategory  () {
 
   useEffect(() => {
       const url =  "https://fakestoreapi.com/products"
-
-      const fetchData = async () => {
-
-          const response = await fetch(url);
-          const data = await response.json();
-          
-          // const data = JSON.parse(data1)
-         
-          SetProducts(data);
-          
-        //   setCategoryName(categoryName == Products.category ? Products.category : null  )
-          console.log(Products)
-
-      };
-      fetchData();
-
+      axios.get(url).then(res => {
+          console.log("response", res)
+          const data = res.data;
+          console.log("data", data)
+          SetProducts(res.data);
+      }).catch(error => console.log("error", error))
   },[]);
   
   // console.log(Products)

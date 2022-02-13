@@ -38,6 +38,8 @@ export function WomenCategory  () {
   const toggleProBanner = () => {
     document.querySelector('.proBanner').classList.toggle("hide");
   }
+  
+  let now = new Date();
 
     return (
       <div>
@@ -67,7 +69,7 @@ export function WomenCategory  () {
                 <div className="media">
                   <div className="media-body">
                     <label>End Date</label>
-                    <h6>Oct 23, 2018</h6>
+                    <h6>{now.toDateString()}</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">

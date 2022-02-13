@@ -4,10 +4,12 @@ import { Link, useParams, withRouter } from "react-router-dom";
 
 import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
+import { getByDisplayValue } from '@testing-library/react';
 
 
 export function Dashboard  (ItemCount) { 
   const [Products, SetProducts] = useState([])
+
 
   useEffect(() => {
       const url =  "https://fakestoreapi.com/products"
@@ -27,6 +29,8 @@ export function Dashboard  (ItemCount) {
   
   console.log(Products )
 
+  let now = new Date();
+ 
 
   const toggleProBanner = () => {
     document.querySelector('.proBanner').classList.toggle("hide");
@@ -54,13 +58,13 @@ export function Dashboard  (ItemCount) {
                 <div className="media">
                   <div className="media-body">
                     <label>Start Date</label>
-                    <h6>Oct 10, 2018</h6>
+                    <h6>{}</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
                     <label>End Date</label>
-                    <h6>Oct 23, 2018</h6>
+                    <h6>{now.toDateString()}</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">

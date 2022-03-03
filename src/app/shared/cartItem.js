@@ -11,7 +11,7 @@ const CartItem = ({ product, productId }) => {
 
     const array = cartStore.menuItems
     const duplicate = array => array.filter((item , index) => array.indexOf(item) !== index)  
-    console.log( "remove", duplicate(array))
+    console.log( "remove", duplicate(array).length)
 
     console.log("cart Test", cartStore)
 

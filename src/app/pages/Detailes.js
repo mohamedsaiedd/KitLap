@@ -73,12 +73,12 @@ export function Detailes(ItemCount) {
                 {product.title}
               </h1>
               
-              <h4>
+              <h4 className='productDescription'>
                 {product.description}
               </h4>
           
              
-              <h2>
+              <h2 className='productPrice'>
                 EGP {product.price}
               </h2>
               </div>
@@ -86,9 +86,11 @@ export function Detailes(ItemCount) {
               <Button onClick={event=>addToCart(event)}  variant="contained" className='successBtn cartBtn' >
                 Add To Cart
               </Button>
-              <Button onClick={addToCart} variant="contained" className='continueBtn cartBtn' >
+              <Link to="/">
+              <Button  variant="contained" className='continueBtn cartBtn' >
                 Continue Shopping
               </Button>
+              </Link>
               </div>
             </Grid>
            

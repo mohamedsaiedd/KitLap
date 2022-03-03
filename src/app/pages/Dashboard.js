@@ -1,10 +1,12 @@
 import React, { useState ,useEffect ,  Component } from 'react'
 // import {Line, Bar, Pie } from 'react-chartjs-2';
 import { Link, useParams, withRouter } from "react-router-dom";
+// import SearchBar from "material-ui-search-bar";  
 
 import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
 import { getByDisplayValue } from '@testing-library/react';
+import { useSelector } from "react-redux"
 
 
 export function Dashboard  (ItemCount) { 
@@ -99,7 +101,6 @@ export function Dashboard  (ItemCount) {
                 <Grid item xs={12} md={8} lg={4} >
                   <MediaCard product={product} productId = {product.id}/>
                   
-                 
                 </Grid>
               ))}
             </Grid>

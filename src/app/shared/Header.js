@@ -2,38 +2,39 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { Icon } from '@iconify/react';
+
+import { useSelector } from "react-redux"
 import CartIcon from '../components/cartIcon'
+import CartItem from './cartItem'
 
-// import StorefrontIcon from '@mui/icons-material/Storefront';
 
-export class Header extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      ItemCount : 2
-    }
-}
+ const  Header = () =>  {
+  
 
-  closeMenu(e) {
+  const closeMenu = (e) =>{
     e.target.closest(".dropdown").classList.remove("show");
     e.target.closest(".dropdown .dropdown-menu").classList.remove("show");
   }
 
-  toggleHeaderMenu(e) {
+  const toggleHeaderMenu =(e)=> {
     e.preventDefault();
     document.querySelector("body").classList.toggle("az-header-menu-show");
   }
 
-  componentDidUpdate(prevProps) {
+  const componentDidUpdate =(prevProps)=> {
     if (this.props.location !== prevProps.location) {
       document.querySelector("body").classList.remove("az-header-menu-show");
     }
   }
   
+  
 
-  render() {
 
 
+    const cartStore = useSelector(state => state.cartReducer)
+
+    // console.log(cartStore.cartIconNo)
+    
     return (
       <div>
         <div className="az-header">
@@ -42,7 +43,7 @@ export class Header extends Component {
               <a href="#/" className="az-logo">
                 <span>KIT</span> LAP
               </a>
-              <a
+              <a  
                 id="azMenuShow"
                 onClick={event => this.toggleHeaderMenu(event)}
                 className="az-header-menu-icon d-lg-none"
@@ -67,7 +68,7 @@ export class Header extends Component {
               <ul className="nav">
                 <li
                   className={
-                    this.isPathActive("/dashboard")
+                    isPathActive("/dashboard")
                       ? "nav-item active "
                       : "nav-item"
                   }
@@ -80,7 +81,7 @@ export class Header extends Component {
                 </li>
                 <li
                   className={
-                    this.isPathActive("/pages/men")
+                    isPathActive("/pages/men")
                       ? "nav-item active"
                       : "nav-item "
                   }
@@ -94,7 +95,7 @@ export class Header extends Component {
 
                 <li
                   className={
-                    this.isPathActive("/pages/women")
+                    isPathActive("/pages/women")
                       ? "nav-item active"
                       : "nav-item"
                   }
@@ -107,7 +108,7 @@ export class Header extends Component {
 
                 <li
                   className={
-                    this.isPathActive("/pages/electronics")
+                    isPathActive("/pages/electronics")
                       ? "nav-item active"
                       : "nav-item"
                   }
@@ -120,10 +121,10 @@ export class Header extends Component {
                 <li className="nav-item">
                   <Dropdown
                     className={
-                      this.isPathActive("/ui-elements") ||
-                      this.isPathActive("/form") ||
-                      this.isPathActive("/charts") ||
-                      this.isPathActive("/tables")
+                      isPathActive("/ui-elements") ||
+                      isPathActive("/form") ||
+                      isPathActive("/charts") ||
+                      isPathActive("/tables")
                         ? "nav-item active"
                         : "nav-item"
                     }
@@ -139,7 +140,7 @@ export class Header extends Component {
                             <Link
                               to="/ui-elements/buttons"
                               className={
-                                this.isPathActive("/ui-elements/buttons")
+                                isPathActive("/ui-elements/buttons")
                                   ? "nav-link active"
                                   : "nav-link"
                               }
@@ -149,7 +150,7 @@ export class Header extends Component {
                             <Link
                               to="/ui-elements/dropdowns"
                               className={
-                                this.isPathActive("/ui-elements/dropdowns")
+                                isPathActive("/ui-elements/dropdowns")
                                   ? "nav-link active"
                                   : "nav-link"
                               }
@@ -159,7 +160,7 @@ export class Header extends Component {
                             <Link
                               to="/ui-elements/icons"
                               className={
-                                this.isPathActive("/ui-elements/icons")
+                                isPathActive("/ui-elements/icons")
                                   ? "nav-link active"
                                   : "nav-link"
                               }
@@ -174,7 +175,7 @@ export class Header extends Component {
                             <Link
                               to="/form/form-elements"
                               className={
-                                this.isPathActive("/form/form-elements")
+                                isPathActive("/form/form-elements")
                                   ? "nav-link active"
                                   : "nav-link"
                               }
@@ -189,7 +190,7 @@ export class Header extends Component {
                             <Link
                               to="/charts/chartjs"
                               className={
-                                this.isPathActive("/charts/chartjs")
+                                isPathActive("/charts/chartjs")
                                   ? "nav-link active"
                                   : "nav-link"
                               }
@@ -204,7 +205,7 @@ export class Header extends Component {
                             <Link
                               to="/tables/basic-table"
                               className={
-                                this.isPathActive("/tables/basic-table")
+                                isPathActive("/tables/basic-table")
                                   ? "nav-link active"
                                   : "nav-link"
                               }
@@ -220,7 +221,7 @@ export class Header extends Component {
                 <li className="nav-item">
                   <Dropdown
                     className={
-                      this.isPathActive("/general-pages")
+                      isPathActive("/general-pages")
                         ? "nav-item active"
                         : "nav-item"
                     }
@@ -232,7 +233,7 @@ export class Header extends Component {
                       <Link
                         to="/general-pages/signin"
                         className={
-                          this.isPathActive("/general-pages/signin")
+                          isPathActive("/general-pages/signin")
                             ? "nav-link active"
                             : "nav-link"
                         }
@@ -242,7 +243,7 @@ export class Header extends Component {
                       <Link
                         to="/general-pages/signup"
                         className={
-                          this.isPathActive("/general-pages/signup")
+                          isPathActive("/general-pages/signup")
                             ? "nav-link active"
                             : "nav-link"
                         }
@@ -269,7 +270,7 @@ export class Header extends Component {
               <Dropdown className="az-header-notification">
                 <Dropdown.Toggle as={"a"} className="new">
                   {/* <i className="typcn typcn-bell"></i> */}
-                  <CartIcon ItemCount = {this.state.ItemCount} />
+                  <CartIcon ItemCount = {cartStore.menuItems.length} />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <div className="az-dropdown-header mg-b-20 d-sm-none">
@@ -283,69 +284,10 @@ export class Header extends Component {
                   </div>
                   <h6 className="az-notification-title">Cart</h6>
                   <p className="az-notification-text">
-                    You have 2 items selected
+                    You have {cartStore.menuItems.length} items selected
                   </p>
                   <div className="az-notification-list">
-                    <div className="media new">
-                      <div className="az-img-user">
-                        <img
-                          src={require("../../assets/images/img2.jpg")}
-                          alt=""
-                        ></img>
-                      </div>
-                      <div className="media-body">
-                        <p>
-                          Congratulate <strong>Socrates Itumay</strong> for work
-                          anniversaries
-                        </p>
-                        <span>Mar 15 12:32pm</span>
-                      </div>
-                    </div>
-                    <div className="media new">
-                      <div className="az-img-user online">
-                        <img
-                          src={require("../../assets/images/img3.jpg")}
-                          alt=""
-                        ></img>
-                      </div>
-                      <div className="media-body">
-                        <p>
-                          <strong>Joyce Chua</strong> just created a new blog
-                          post
-                        </p>
-                        <span>Mar 13 04:16am</span>
-                      </div>
-                    </div>
-                    <div className="media">
-                      <div className="az-img-user">
-                        <img
-                          src={require("../../assets/images/img4.jpg")}
-                          alt=""
-                        ></img>
-                      </div>
-                      <div className="media-body">
-                        <p>
-                          <strong>Althea Cabardo</strong> just created a new
-                          blog post
-                        </p>
-                        <span>Mar 13 02:56am</span>
-                      </div>
-                    </div>
-                    <div className="media">
-                      <div className="az-img-user">
-                        <img
-                          src={require("../../assets/images/img5.jpg")}
-                          alt=""
-                        ></img>
-                      </div>
-                      <div className="media-body">
-                        <p>
-                          <strong>Adrian Monino</strong> added new comment on
-                          your photo
-                        </p>
-                        <span>Mar 12 10:40pm</span>
-                      </div>
-                    </div>
+                   <CartItem  />
                   </div>
                   <div className="dropdown-footer">
                     <Link to="/pages/cart">View Cart</Link>
@@ -404,9 +346,12 @@ export class Header extends Component {
     );
   }
 
-  isPathActive(path) {
-    return this.props.location.pathname.startsWith(path);
-  }
-}
 
+  const  isPathActive = (path) => {
+    return 
+    
+    this.props.location.pathname.startsWith(path)
+
+  
+  }
 export default withRouter(Header);

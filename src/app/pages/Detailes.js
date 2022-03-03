@@ -4,10 +4,16 @@ import axios from "axios"
 import { Image } from 'semantic-ui-react'
 import MediaCard from '../shared/ItemCard';
 import { Grid ,Button } from '@material-ui/core';
+import Header from '../shared/Header';
+import { useDispatch , useSelector } from 'react-redux';
+import  {addToCart as addToCartDispatch} from "../redux/reducers/cartReducer/actionsCreator"
 
-  
+
+
 export function Detailes(ItemCount) {
 
+  const dispatch = useDispatch(); 
+  const cartStore = useSelector((state)=> state.cartReducer)  
   const [product, setProduct] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -29,16 +35,20 @@ export function Detailes(ItemCount) {
     , [id])
 
   const addToCart = () => {
-    ItemCount += ItemCount ;
+    dispatch(addToCartDispatch(product))
   } 
+
   const toggleProBanner = () => {
     document.querySelector('.proBanner').classList.toggle("hide");
   }
-
+  
+ console.log( "cartStore" , cartStore)
+  
 
   return  (
-    
     <div>
+      
+    {/* <Header /> */}
       <div className="proBanner">
         <div>
           <span className="d-flex align-items-center purchase-popup">
@@ -73,10 +83,10 @@ export function Detailes(ItemCount) {
               </h2>
               </div>
               <div>
-              <Button  variant="contained" className='successBtn cartBtn' >
+              <Button onClick={event=>addToCart(event)}  variant="contained" className='successBtn cartBtn' >
                 Add To Cart
               </Button>
-              <Button onClick={addToCart()} variant="contained" className='continueBtn cartBtn' >
+              <Button onClick={addToCart} variant="contained" className='continueBtn cartBtn' >
                 Continue Shopping
               </Button>
               </div>

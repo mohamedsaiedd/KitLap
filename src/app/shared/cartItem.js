@@ -9,10 +9,7 @@ const CartItem = ({ product, productId }) => {
 
     const cartStore = useSelector(state => state.cartReducer)
 
-    const array = cartStore.menuItems
-    const duplicate = array => array.filter((item , index) => array.indexOf(item) !== index)  
-    console.log( "remove", duplicate(array).length)
-
+  
     console.log("cart Test", cartStore)
 
     return (
@@ -32,13 +29,18 @@ const CartItem = ({ product, productId }) => {
                             </p>
                             <p>
                             Qty: {
-                                cartStore.menuItems.length
+                                product.duplication
                             }
                             </p>
                             <span>EGP {product.price}</span>
+                           
                         </div>
+                        
                         </div>
+
+                        
                 )
+                
             }
         
         )

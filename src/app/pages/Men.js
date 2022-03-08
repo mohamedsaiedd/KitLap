@@ -12,7 +12,7 @@ export function MenCategory  () {
   const [categoryName, setCategoryName] = useState("men's clothing");
 
   useEffect(() => {
-      const url =  "https://fakestoreapi.com/products"
+    const url = "http://localhost:4000/products"
       axios.get(url).then(res => {
           console.log("response", res)
           const data = res.data;

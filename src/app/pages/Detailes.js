@@ -6,7 +6,7 @@ import MediaCard from '../shared/ItemCard';
 import { Grid ,Button } from '@material-ui/core';
 import Header from '../shared/Header';
 import { useDispatch , useSelector } from 'react-redux';
-import  {addToCart as addToCartDispatch} from "../redux/reducers/cartReducer/actionsCreator"
+import  {addToCart as addToCartDispatch , removeFromCart as removeFromCartDispatch } from "../redux/reducers/cartReducer/actionsCreator"
 
 
 
@@ -23,7 +23,7 @@ export function Detailes(ItemCount) {
 
   useEffect(() => {
 
-    const url = `https://fakestoreapi.com/products/${id}`
+    const url = `http://localhost:4000/products/${id}`
 
     axios.get(url).then(res => {
       console.log(res.data)
@@ -36,6 +36,9 @@ export function Detailes(ItemCount) {
 
   const addToCart = () => {
     dispatch(addToCartDispatch(product))
+  } 
+  const removeFromCart = () => {
+    dispatch(removeFromCartDispatch(product))
   } 
 
   const toggleProBanner = () => {
@@ -86,6 +89,9 @@ export function Detailes(ItemCount) {
               <Button onClick={event=>addToCart(event)}  variant="contained" className='successBtn cartBtn' >
                 Add To Cart
               </Button>
+                <Button onClick={event=>removeFromCart(event)}  variant="contained" className='successBtn cartBtn' >
+                  remove To Cart
+                </Button>
               <Link to="/">
               <Button  variant="contained" className='continueBtn cartBtn' >
                 Continue Shopping

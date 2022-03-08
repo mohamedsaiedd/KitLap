@@ -12,7 +12,7 @@ export function ElectronicsCategory  () {
   const [categoryName, setCategoryName] = useState("electronics");
 
   useEffect(() => {
-      const url =  "https://fakestoreapi.com/products"
+    const url = "http://localhost:4000/products"
 
 
      

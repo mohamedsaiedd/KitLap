@@ -86,7 +86,7 @@ import CartItem from './cartItem'
                       : "nav-item "
                   }
                 >
-                  <Link to="../pages/men" className="nav-link">
+                  <Link to="/pages/men" className="nav-link">
                     <i className="typcn typcn-chart-area-outline"></i> 
                     MEN
                   </Link>
@@ -270,7 +270,7 @@ import CartItem from './cartItem'
               <Dropdown className="az-header-notification">
                 <Dropdown.Toggle as={"a"} className="new">
                   {/* <i className="typcn typcn-bell"></i> */}
-                  <CartIcon ItemCount = {cartStore.menuItems.length} />
+                  <CartIcon ItemCount = {cartStore.menuAccItems.length} />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <div className="az-dropdown-header mg-b-20 d-sm-none">
@@ -284,7 +284,7 @@ import CartItem from './cartItem'
                   </div>
                   <h6 className="az-notification-title">Cart</h6>
                   <p className="az-notification-text">
-                    You have {cartStore.menuItems.length} items selected
+                    You have {cartStore.menuAccItems.length} items selected
                   </p>
                   <div className="az-notification-list">
                    <CartItem  />

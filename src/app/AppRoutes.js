@@ -51,8 +51,6 @@ export class AppRoutes extends Component {
 
           <Route exact path="/form/form-elements" component={ FormElements } />
 
-
-          
           <Route exact path="/checkout/checkout" component={ CheckOut } />
 
           <Route exact path="/pages/men" component={ MenCategory } />

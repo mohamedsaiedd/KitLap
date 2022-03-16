@@ -7,11 +7,13 @@ import {Provider} from 'react-redux';
 import Header from './shared/Header';
 import Footer from './shared/Footer';
 import store from '../app/redux/store'
-
+// import authHeader from './Auth/auth.header';
 class App extends Component {
+  
   state = {}
   componentDidMount() {
     this.onRouteChanged();
+    // authHeader();
   }
   render () {
     let headerComponent = !this.state.isFullPageLayout ? <Header/> : '';

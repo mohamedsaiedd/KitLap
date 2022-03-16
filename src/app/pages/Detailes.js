@@ -39,6 +39,7 @@ export function Detailes(ItemCount) {
   } 
   const removeFromCart = () => {
     dispatch(removeFromCartDispatch(product))
+    console.log("productfromdetailes" ,product)
   } 
 
   const toggleProBanner = () => {
@@ -69,7 +70,6 @@ export function Detailes(ItemCount) {
               <img src={product.image} />
 
             </Grid>
-
             <Grid className='gridFlex' item xs={12} md={8} lg={8} >
               <div>
               <h1>
@@ -89,9 +89,9 @@ export function Detailes(ItemCount) {
               <Button onClick={event=>addToCart(event)}  variant="contained" className='successBtn cartBtn' >
                 Add To Cart
               </Button>
-                <Button onClick={event=>removeFromCart(event)}  variant="contained" className='successBtn cartBtn' >
+                {/* <Button onClick={event=>removeFromCart(event)}  variant="contained" className='successBtn cartBtn' >
                   remove To Cart
-                </Button>
+                </Button> */}
               <Link to="/">
               <Button  variant="contained" className='continueBtn cartBtn' >
                 Continue Shopping

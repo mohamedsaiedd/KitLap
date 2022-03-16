@@ -60,12 +60,16 @@ const cartReducer = (state = initaialState, action) => {
             }) 
 
             let menuItemsCart = state.menuItems.map(item => {
-                if(item.id === newItem.id) item.duplication -=  item.duplication
-                if(!item.duplication) return null
+                if(item.id === newItem.id) item.duplication--
+                if(!item.duplication) {
+                    console.log("zero")
+                    return null}
                 return item
             }).filter(item => !!item)
 
-            return {...state , menuAccItems : menuFilterItems , menuItemsCart :menuItemsCart} 
+            localStorage.setItem("menuAccItems", JSON.stringify(menuFilterItems));
+            localStorage.setItem("menuItems", JSON.stringify(menuItemsCart));
+            return {...state , menuAccItems : menuFilterItems , menuItems : menuItemsCart} 
 
         default:
             return state

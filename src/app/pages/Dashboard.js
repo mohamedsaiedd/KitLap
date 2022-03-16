@@ -29,7 +29,7 @@ export function Dashboard(ItemCount) {
 
   }, []);
 
-  console.log(Products)
+  // console.log(Products)
 
   let now = new Date();
 

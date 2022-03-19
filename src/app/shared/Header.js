@@ -260,9 +260,7 @@ const Header = () => {
 
               >
                 <Link className="nav-link">
-
                   <Search />
-
                 </Link>
 
               </li>

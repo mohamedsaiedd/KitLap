@@ -6,66 +6,66 @@ import { Icon } from '@iconify/react';
 import { useSelector } from "react-redux"
 import CartIcon from '../components/cartIcon'
 import CartItem from './cartItem'
+import { Search } from './search'
+
+const Header = () => {
 
 
- const  Header = () =>  {
-  
-
-  const closeMenu = (e) =>{
+  const closeMenu = (e) => {
     e.target.closest(".dropdown").classList.remove("show");
     e.target.closest(".dropdown .dropdown-menu").classList.remove("show");
   }
 
-  const toggleHeaderMenu =(e)=> {
+  const toggleHeaderMenu = (e) => {
     e.preventDefault();
     document.querySelector("body").classList.toggle("az-header-menu-show");
   }
 
-  const componentDidUpdate =(prevProps)=> {
+  const componentDidUpdate = (prevProps) => {
     if (this.props.location !== prevProps.location) {
       document.querySelector("body").classList.remove("az-header-menu-show");
     }
   }
-  
-  
 
 
 
-    const cartStore = useSelector(state => state.cartReducer)
 
-    // console.log(cartStore.cartIconNo)
-    
-    return (
-      <div>
-        <div className="az-header">
-          <div className="container">
-            <div className="az-header-left">
-              <a href="#/" className="az-logo">
-                <span>KIT</span> LAP
-              </a>
-              <a  
-                id="azMenuShow"
-                onClick={event => this.toggleHeaderMenu(event)}
-                className="az-header-menu-icon d-lg-none"
+
+  const cartStore = useSelector(state => state.cartReducer)
+
+  // console.log(cartStore.cartIconNo)
+
+  return (
+    <div>
+      <div className="az-header">
+        <div className="container">
+          <div className="az-header-left">
+            <a href="#/" className="az-logo">
+              <span>KIT</span> LAP
+            </a>
+            <a
+              id="azMenuShow"
+              onClick={event => this.toggleHeaderMenu(event)}
+              className="az-header-menu-icon d-lg-none"
+              href="#/"
+            >
+              <span></span>
+            </a>
+          </div>
+          <div className="az-header-menu">
+            <div className="az-header-menu-header">
+              <Link to="/" className="az-logo">
+                <span></span> Kitlap
+              </Link>
+              <a
                 href="#/"
+                onClick={event => this.toggleHeaderMenu(event)}
+                className="close"
               >
-                <span></span>
+                &times;
               </a>
             </div>
-            <div className="az-header-menu">
-              <div className="az-header-menu-header">
-                <Link to="/" className="az-logo">
-                  <span></span> Kitlap
-                </Link>
-                <a
-                  href="#/"
-                  onClick={event => this.toggleHeaderMenu(event)}
-                  className="close"
-                >
-                  &times;
-                </a>
-              </div>
-              <ul className="nav">
+            {/* <ul className="nav">
                 <li
                   className={
                     isPathActive("/dashboard")
@@ -253,105 +253,118 @@ import CartItem from './cartItem'
                     </Dropdown.Menu>
                   </Dropdown>
                 </li>
-              </ul>
-            </div>
-            <div className="az-header-right">
+              </ul> */}
+            <ul className="nav">
+              <li
+                className="nav-item"
+
+              >
+                <Link className="nav-link">
+
+                  <Search />
+
+                </Link>
+
+              </li>
+            </ul>
+          </div >
+          <div className="az-header-right">
             {/* <a href="/" className="az-header-search-link">
                 <i className="fas fa-file-alt"></i>
               </a> */}
-              {/* <a href="#/" className="az-header-search-link">
+            {/* <a href="#/" className="az-header-search-link">
                 <i className="fas fa-search"></i>
               </a> */}
-              <div className="az-header-message">
-                <Link to="#/">
-                  <i className="typcn typcn-messages"></i>
-                </Link>
-              </div>
-              <Dropdown className="az-header-notification">
-                <Dropdown.Toggle as={"a"} className="new">
-                  {/* <i className="typcn typcn-bell"></i> */}
-                  <CartIcon ItemCount = {cartStore.menuAccItems.length} />
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <div className="az-dropdown-header mg-b-20 d-sm-none">
-                    <a
-                      href="#/ "
-                      onClick={event => this.closeMenu(event)}
-                      className="az-header-arrow"
-                    >
-                      <i className="icon ion-md-arrow-back"></i>
-                    </a>
-                  </div>
-                  <h6 className="az-notification-title">Cart</h6>
-                  <p className="az-notification-text">
-                    You have {cartStore.menuAccItems.length} items selected
-                  </p>
-                  <div className="az-notification-list">
-                   <CartItem  />
-                  </div>
-                  <div className="dropdown-footer">
-                    <Link to="/pages/cart">View Cart</Link>
-                  </div>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Dropdown className="az-profile-menu userProfile">
-                <Dropdown.Toggle as={"a"} className="az-img-user">
-                  <img
-                    src={require("../../assets/images/img3.jpg")}
-                    alt=""
-                  ></img>
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <div className="az-dropdown-header d-sm-none">
-                    <a
-                      href="#/"
-                      onClick={event => this.closeMenu(event)}
-                      className="az-header-arrow"
-                    >
-                      <i className="icon ion-md-arrow-back"></i>
-                    </a>
-                  </div>
-                  <div className="az-header-profile">
-                    <div className="az-img-user">
-                      <img
-                        src={require("../../assets/images/img3.jpg")}
-                        alt=""
-                      ></img>
-                    </div>
-                    <h6>mohamed saied</h6>
-                    <span>Premium Member</span>
-                  </div>
-
-                  <a href="#/" className="dropdown-item">
-                    <i className="typcn typcn-user-outline"></i> My Profile
-                  </a>
-                  <a href="#/" className="dropdown-item">
-                    <i className="typcn typcn-edit"></i> Edit Profile
-                  </a>
-                  <a href="#/" className="dropdown-item">
-                    <i className="typcn typcn-time"></i> Activity Logs
-                  </a>
-                  <a href="#/" className="dropdown-item">
-                    <i className="typcn typcn-cog-outline"></i> Account Settings
-                  </a>
-                  <Link to="/general-pages/signin" className="dropdown-item">
-                    <i className="typcn typcn-power-outline"></i> Sign Out
-                  </Link>
-                </Dropdown.Menu>
-              </Dropdown>
+            <div className="az-header-message">
+              <Link to="#/">
+                <i className="typcn typcn-messages"></i>
+              </Link>
             </div>
+            <Dropdown className="az-header-notification">
+              <Dropdown.Toggle as={"a"} className="new">
+                {/* <i className="typcn typcn-bell"></i> */}
+                <CartIcon ItemCount={cartStore.menuAccItems.length} />
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <div className="az-dropdown-header mg-b-20 d-sm-none">
+                  <a
+                    href="#/ "
+                    onClick={event => this.closeMenu(event)}
+                    className="az-header-arrow"
+                  >
+                    <i className="icon ion-md-arrow-back"></i>
+                  </a>
+                </div>
+                <h6 className="az-notification-title">Cart</h6>
+                <p className="az-notification-text">
+                  You have {cartStore.menuAccItems.length} items selected
+                </p>
+                <div className="az-notification-list">
+                  <CartItem />
+                </div>
+                <div className="dropdown-footer">
+                  <Link to="/pages/cart">View Cart</Link>
+                </div>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Dropdown className="az-profile-menu userProfile">
+              <Dropdown.Toggle as={"a"} className="az-img-user">
+                <img
+                  src={require("../../assets/images/img3.jpg")}
+                  alt=""
+                ></img>
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <div className="az-dropdown-header d-sm-none">
+                  <a
+                    href="#/"
+                    onClick={event => this.closeMenu(event)}
+                    className="az-header-arrow"
+                  >
+                    <i className="icon ion-md-arrow-back"></i>
+                  </a>
+                </div>
+                <div className="az-header-profile">
+                  <div className="az-img-user">
+                    <img
+                      src={require("../../assets/images/img3.jpg")}
+                      alt=""
+                    ></img>
+                  </div>
+                  <h6>mohamed saied</h6>
+                  <span>Premium Member</span>
+                </div>
+
+                <a href="#/" className="dropdown-item">
+                  <i className="typcn typcn-user-outline"></i> My Profile
+                </a>
+                <a href="#/" className="dropdown-item">
+                  <i className="typcn typcn-edit"></i> Edit Profile
+                </a>
+                <a href="#/" className="dropdown-item">
+                  <i className="typcn typcn-time"></i> Activity Logs
+                </a>
+                <a href="#/" className="dropdown-item">
+                  <i className="typcn typcn-cog-outline"></i> Account Settings
+                </a>
+                <Link to="/general-pages/signin" className="dropdown-item">
+                  <i className="typcn typcn-power-outline"></i> Sign Out
+                </Link>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
 
-  const  isPathActive = (path) => {
-    return 
-    
-    this.props.location.pathname.startsWith(path)
+const isPathActive = (path) => {
+  return
 
-  
-  }
+  this.props.location.pathname.startsWith(path)
+
+
+}
 export default withRouter(Header);

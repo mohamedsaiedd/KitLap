@@ -18,7 +18,7 @@ export default function MediaCard({ product, productId }) {
   return (
 
     <Link to={`../pages/detailes/${productId}`}>
-      <Card sx={{ maxWidth: 245 }} key={product.id} >
+      <Card className="mediaCard" sx={{ maxWidth: 245 }} key={product.id} >
         <CardMedia
           component="img"
           height="240"

@@ -40,7 +40,7 @@ const Header = () => {
       <div className="az-header">
         <div className="container">
           <div className="az-header-left">
-            <a href="#/" className="az-logo">
+            <a href="" className="az-logo">
               <span>KIT</span> LAP
             </a>
             <a
@@ -308,7 +308,7 @@ const Header = () => {
             <Dropdown className="az-profile-menu userProfile">
               <Dropdown.Toggle as={"a"} className="az-img-user">
                 <img
-                  src={require("../../assets/images/img3.jpg")}
+                  src={require("../../assets/images/img7.jpg")}
                   alt=""
                 ></img>
               </Dropdown.Toggle>
@@ -325,7 +325,7 @@ const Header = () => {
                 <div className="az-header-profile">
                   <div className="az-img-user">
                     <img
-                      src={require("../../assets/images/img3.jpg")}
+                      src={require("../../assets/images/img7.jpg")}
                       alt=""
                     ></img>
                   </div>

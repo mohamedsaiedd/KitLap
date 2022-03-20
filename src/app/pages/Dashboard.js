@@ -53,14 +53,14 @@ export function Dashboard(ItemCount) {
         <div className="az-content-body">
           <div className="az-dashboard-one-title">
             <div>
-              <h2 className="az-dashboard-title">Hi, welcome back!</h2>
+              <h2 className="az-dashboard-title">Hi, welcome back Mohamed!</h2>
               <p className="az-dashboard-text">Your web analytics dashboard template.</p>
             </div>
             <div className="az-content-header-right">
               <div className="media">
                 <div className="media-body">
                   <label>Start Date</label>
-                  <h6>{ }</h6>
+                  <h6>Sat Mar 11 2022</h6>
                 </div>{/* media-body */}
               </div>{/* media */}
               <div className="media">
@@ -75,7 +75,7 @@ export function Dashboard(ItemCount) {
                   <h6>All Categories</h6>
                 </div>{/* media-body */}
               </div>{/* media */}
-              <a href="#/" className="btn btn-purple">Search</a>
+              {/* <a href="#/" className="btn btn-purple">Search</a> */}
             </div>
           </div>{/* az-dashboard-one-title */}
 
@@ -89,10 +89,10 @@ export function Dashboard(ItemCount) {
             </nav>
 
             <nav className="nav">
-              <a className="nav-link" href="#/"><i className="far fa-save"></i> Save Report</a>
-              <a className="nav-link" href="#/"><i className="far fa-file-pdf"></i> Export to PDF</a>
-              <a className="nav-link" href="#/"><i className="far fa-envelope"></i>Send to Email</a>
-              <a className="nav-link" href="#/"><i className="fas fa-ellipsis-h"></i></a>
+              <a className="nav-link" href="#/">Free Shipping</a>
+              <a className="nav-link" href="#/">Originals</a>
+              <a className="nav-link" href="#/">Top Deals</a>
+              <a className="nav-link" href="#/"></a>
             </nav>
           </div>
 

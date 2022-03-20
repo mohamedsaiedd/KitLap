@@ -2,24 +2,34 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import './App.scss';
 import AppRoutes from './AppRoutes';
+import {Provider} from 'react-redux';
+
 import Header from './shared/Header';
 import Footer from './shared/Footer';
-
+import store from '../app/redux/store'
+// import authHeader from './Auth/auth.header';
 class App extends Component {
+  
   state = {}
   componentDidMount() {
     this.onRouteChanged();
+    // authHeader();
   }
   render () {
     let headerComponent = !this.state.isFullPageLayout ? <Header/> : '';
     let footerComponent = !this.state.isFullPageLayout ? <Footer/> : '';
     return (
-      <div>
+      
+      <div><Provider store={store}>
         { headerComponent }
         <div className="az-content-wrapper">
+        
           <AppRoutes/>
+       
         </div>
         { footerComponent }
+      
+      </Provider>
       </div>
     );
   }

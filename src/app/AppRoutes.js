@@ -1,6 +1,8 @@
 import React, { Component, Suspense, lazy } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import { Loader } from 'semantic-ui-react'
 import { header } from './shared/Header'
+import LoaderUi from './shared/Loader'
 
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 
@@ -21,12 +23,19 @@ const CheckOut = lazy(() => import('./checkout/CheckOut'))
 
 const MenCategory = lazy(() => import('./pages/Men'))
 
+const WomenCategory = lazy(() => import('./pages/Women'))
+
+const ElectronicsCategory = lazy(() => import('./pages/Electronics'))
+
+const Cart = lazy(() => import('./pages/Cart'))
+
+const Detailes = lazy(() => import('./pages/Detailes'))
 
 
 export class AppRoutes extends Component {
   render() {
     return (
-      <Suspense fallback=''>
+      <Suspense fallback={<LoaderUi/>}>
         <Switch>
           <Route exact path="/">
             <Redirect to="/dashboard"></Redirect>
@@ -46,7 +55,15 @@ export class AppRoutes extends Component {
 
           <Route exact path="/pages/men" component={ MenCategory } />
 
+          <Route exact path="/pages/women" component={ WomenCategory } />
 
+          <Route exact path="/pages/electronics" component={  ElectronicsCategory } />
+
+          <Route exact path="/pages/cart" component={  Cart } />
+
+          <Route exact path="/pages/detailes/:id" component={  Detailes } />
+
+          
           <Route exact path="/charts/chartjs" component={ ChartJs } />
 
           <Route exact path="/tables/basic-table" component={ BasicTable } />

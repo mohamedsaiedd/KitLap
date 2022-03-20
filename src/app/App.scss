@@ -149,6 +149,8 @@
 @import "../assets/scss/custom/list";
 @import "../assets/scss/custom/modal";
 @import "../assets/scss/custom/nav";
+@import "../assets/scss/custom/card";
+@import "../assets/scss/custom/cart";
 
 /* ############### CUSTOM VENDOR STYLES ############### */
 @import "../assets/scss/lib/datatables";
@@ -222,6 +224,7 @@
 @import "~@fullcalendar/daygrid/main.css";
 
 
+/* ############### DETAILS PAGE ############### */
 
-
-
+@import "../assets/scss/detailes/singleItem";
+@import "../assets/scss/searchbar/searchbar";

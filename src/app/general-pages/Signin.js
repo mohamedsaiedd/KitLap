@@ -7,7 +7,7 @@ export class Signin extends Component {
       <div>
         <div className="az-signin-wrapper">
           <div className="az-card-signin">
-            <h1 className="az-logo">az<span>i</span>a</h1>
+            <h1 className="az-logo">kitlap</h1>
             <div className="az-signin-header">
               <h2>Welcome back!</h2>
               <h4>Please sign in to continue</h4>

@@ -1,0 +1,27 @@
+.quantitySection {
+    float: right;
+
+}
+.mediaCart {
+    height: 150px;
+    border-bottom: 1px solid rgba(149, 149, 149, 0.473);
+    padding-top: 10px;
+}
+.quantityText {
+    margin: 0 10px;
+    font-size: 1rem;
+    font-weight: 100;
+
+    span {
+        font-weight: 900;
+        margin: 0 5px 0 0;
+
+    }
+}
+.snackBar {
+    left: auto;
+}
+
+.az-img-user::after {
+    display: none   ;
+}

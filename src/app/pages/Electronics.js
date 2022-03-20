@@ -4,30 +4,42 @@ import { Link, withRouter } from "react-router-dom";
 
 import  MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
-import axios from "axios"
 
-export function MenCategory  () { 
+
+export function ElectronicsCategory  () { 
 
   const [Products, SetProducts] = useState([])
-  const [categoryName, setCategoryName] = useState("men's clothing");
+  const [categoryName, setCategoryName] = useState("electronics");
 
   useEffect(() => {
     const url = "http://localhost:4000/products"
-      axios.get(url).then(res => {
-          console.log("response", res)
-          const data = res.data;
-          console.log("data", data)
-          SetProducts(res.data);
-      }).catch(error => console.log("error", error))
+
+
+     
+      const fetchData = async () => {
+
+          const response = await fetch(url);
+          const data = await response.json();
+          
+          // const data = JSON.parse(data1)
+         
+          SetProducts(data);
+          
+        //   setCategoryName(categoryName == Products.category ? Products.category : null  )
+          console.log(Products)
+
+      };
+      fetchData();
+
   },[]);
   
   // console.log(Products)
 
+  let now = new Date();
 
   const toggleProBanner = () => {
     document.querySelector('.proBanner').classList.toggle("hide");
   }
-  let now = new Date();
 
     return (
       <div>
@@ -58,7 +70,6 @@ export function MenCategory  () {
                   <div className="media-body">
                     <label>End Date</label>
                     <h6>{now.toDateString()}</h6>
-
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
@@ -73,9 +84,9 @@ export function MenCategory  () {
 
             <div className="az-dashboard-nav">
               <nav className="nav">
-              <Link  to="../pages/men" className={"nav-link active"}> Men </Link>
+              <Link  to="../pages/men" className={"nav-link "}> Men </Link>
                 <Link to="../pages/women" className="nav-link "> Women </Link>
-                <Link to="../pages/electronics" className="nav-link "> Electronics </Link>
+                <Link to="../pages/electronics" className="nav-link active"> Electronics </Link>
                 <Link to="../dashboard" className="nav-link "> All </Link>
               </nav>
 
@@ -105,20 +116,12 @@ export function MenCategory  () {
               }
             </Grid>
            
-        
-         
-   
-
             </div>{/* row */}
           </div>{/* az-content-body */}
          
-       
-
-       
-       
       </div>
     )
  
 }
 
-export default MenCategory
+export default ElectronicsCategory

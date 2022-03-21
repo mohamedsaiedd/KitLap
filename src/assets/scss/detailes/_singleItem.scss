@@ -25,3 +25,14 @@
 .az-img-user::after {
     display: none   ;
 }
+.oldprice {
+    text-decoration: line-through;
+    color: rgb(144, 144, 144);
+    margin-left: 10px !important;
+}
+.pricecontent {
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-end;
+  
+}

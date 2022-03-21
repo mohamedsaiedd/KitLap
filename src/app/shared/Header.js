@@ -40,7 +40,7 @@ const Header = () => {
       <div className="az-header">
         <div className="container">
           <div className="az-header-left">
-            <a href="" className="az-logo">
+            <a href="/preview/dashboard" className="az-logo">
               <span>KIT</span> LAP
             </a>
             <a

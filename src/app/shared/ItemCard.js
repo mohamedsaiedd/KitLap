@@ -31,12 +31,19 @@ export default function MediaCard({ product, productId }) {
             {product.title}
 
           </Typography>
+          <div className="pricecontent">
 
-          <Typography variant="body2" variant="h5" color="text.secondary">
+            <Typography variant="body2" variant="h5" color="text.secondary">
 
-            EGP {product.price}
+              EGP {product.price}
 
-          </Typography>
+            </Typography>
+            <Typography variant="body2" className="oldprice" variant="h7" color="text.secondary">
+
+              EGP {product.oldprice}
+
+            </Typography>
+          </div>
         </CardContent>
         <CardActions>
           {/* <Button size="large" variant="outlined" >  */}

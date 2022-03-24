@@ -65,7 +65,9 @@
     padding: 0;
   }
 }
-
+.container {
+  max-width: unset;
+}
 .az-content-left {
   width: 100%;
   position: relative;

@@ -187,8 +187,8 @@
   background: #F6F6F6 !important;
 
 }
-.mediaCard::before {
-  content: "12%";
+.mediacardDes {
+  // content: "12%";
   width: 70px;
   height: 50px;
   background-color: #BD4C39;
@@ -200,4 +200,5 @@
   color: white;
   position: relative;
   left: -10px;
+ 
 }

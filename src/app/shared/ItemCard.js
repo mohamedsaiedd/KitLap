@@ -13,18 +13,23 @@ import { Rating } from 'semantic-ui-react'
 
 export default function MediaCard({ product, productId }) {
 
+//get disconted price
+  const price =  Math.floor(parseFloat(product.oldprice) * ( 1- (parseFloat(product.discount) / 100 )))
+  
   const [value, setValue] = React.useState(2);
-
+ 
   return (
 
     <Link to={`../pages/detailes/${productId}`}>
       <Card className="mediaCard" sx={{ maxWidth: 245 }} key={product.id} >
+        <span className="mediacardDes"> {product.discount}%</span>
         <CardMedia
           component="img"
           height="240"
           image={product.image}
           alt="item"
         />
+
         <CardContent>
           <Typography gutterBottom variant="h7" component="div">
 
@@ -35,7 +40,7 @@ export default function MediaCard({ product, productId }) {
 
             <Typography variant="body2" variant="h5" color="text.secondary">
 
-              EGP {product.price}
+              EGP {price}
 
             </Typography>
             <Typography variant="body2" className="oldprice" variant="h7" color="text.secondary">

@@ -7,11 +7,9 @@ const initaialState = {
 }
 
 
-
 const cartReducer = (state = initaialState, action) => {
 
     const newItem = action.payload
-
     let menuItems = state.menuItems
     let menuAccItems = state.menuAccItems
     let exist = false

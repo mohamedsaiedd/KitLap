@@ -278,7 +278,7 @@ const Header = () => {
                 <i className="typcn typcn-messages"></i>
               </Link>
             </div>
-            <Dropdown className="az-header-notification ">
+            <Dropdown className="az-header-notification  ">
               <Dropdown.Toggle as={"a"} className="new">
                 {/* <i className="typcn typcn-bell"></i> */}
                 <CartIcon ItemCount={cartStore.menuAccItems.length} />

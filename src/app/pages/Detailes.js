@@ -10,7 +10,7 @@ import  {addToCart as addToCartDispatch , removeFromCart as removeFromCartDispat
 
 
 
-export function Detailes(ItemCount) {
+export function Detailes(ItemCount ) {
 
   const dispatch = useDispatch(); 
   const cartStore = useSelector((state)=> state.cartReducer)  
@@ -67,7 +67,7 @@ export function Detailes(ItemCount) {
           <Grid container spacing={2} >
 
             <Grid item xs={12} md={8} lg={4} >
-              <img src={product.image} />
+              <img src={product.image}/>
 
             </Grid>
             <Grid className='gridFlex' item xs={12} md={8} lg={8} >

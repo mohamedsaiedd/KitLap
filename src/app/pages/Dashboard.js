@@ -98,7 +98,7 @@ export function Dashboard(ItemCount) {
 
           <Grid container spacing={2} >
             {Products.map(product => (
-              <Grid item xs={12} md={8} lg={4} >
+              <Grid item xs={12}   md={4} lg={3}  >
                 <MediaCard product={product} productId={product.id} />
 
               </Grid>

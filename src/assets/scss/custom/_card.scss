@@ -46,3 +46,11 @@
 .continueBtn {
     background-color: blanchedalmond !important;
 }
+@media (min-width: 1080px) {
+    .MuiGrid-grid-lg-4 {
+        flex-basis : 25% 
+    }
+    .MuiGrid-grid-md-8 {
+        flex-basis : 50% 
+    }
+}

@@ -22,9 +22,8 @@ const Search = () => {
     }, []);
 
     const [Products, SetProducts] = useState([])
-    const { SearchTarget, setSearchTarget } = useState("");
+    const [ SearchTarget, setSearchTarget] = useState("");
 
-    const color = "#333";
 
 
     return (
@@ -50,7 +49,7 @@ const Search = () => {
             {Products.filter((product) => {
                 if (SearchTarget == "") {
                     return product
-                } else if ( product.title.includes(SearchTarget)) {
+                } else if ( product.title.toLowerCase().includes(SearchTarget)) {
                     return product
                 }
 

@@ -27,7 +27,7 @@ const CartItem = () => {
                             <p>
                             Qty: {
                                 product.duplication
-                            }
+                            } 
                             </p>
                             <span>EGP {getPrice(product)}</span>
                            

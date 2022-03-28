@@ -16,7 +16,7 @@ class App extends Component {
     // authHeader();
   }
   render () {
-    let headerComponent = !this.state.isFullPageLayout ? <Header/> : '';
+    let headerComponent = !this.state.isFullPageLayout ? <Header /> : '';
     let footerComponent = !this.state.isFullPageLayout ? <Footer/> : '';
     return (
       

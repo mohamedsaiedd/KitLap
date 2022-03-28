@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { Icon } from '@iconify/react';
-
 import { useSelector } from "react-redux"
 import CartIcon from '../components/cartIcon'
 import CartItem from './cartItem'
-import { Search } from './search'
+import  Search  from './search'
 
-const Header = () => {
+const Header = (products) => {
 
 
   const closeMenu = (e) => {

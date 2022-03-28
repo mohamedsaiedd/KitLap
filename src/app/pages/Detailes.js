@@ -7,8 +7,7 @@ import { Grid, Button } from '@material-ui/core';
 import Header from '../shared/Header';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart as addToCartDispatch, removeFromCart as removeFromCartDispatch } from "../redux/reducers/cartReducer/actionsCreator"
-
-
+import getPrice from "../utilites/itemPrice";
 
 export function Detailes(ItemCount) {
 
@@ -16,7 +15,6 @@ export function Detailes(ItemCount) {
   const cartStore = useSelector((state) => state.cartReducer)
   const [product, setProduct] = useState([])
   const [loading, setLoading] = useState(true)
-
 
   let price = 0
   if (product.discount) {
@@ -58,7 +56,6 @@ export function Detailes(ItemCount) {
 
   return (
     <div>
-
       {/* <Header /> */}
       <div className="proBanner">
         <div>
@@ -90,7 +87,7 @@ export function Detailes(ItemCount) {
                 <div className="pricecontent ">
 
                   <h2 className='productPrice'>
-                    EGP {price}
+                    EGP {getPrice(product)}
                   </h2>
                   {
                     product.discount ? <h5 variant="body2" className="oldprice" >

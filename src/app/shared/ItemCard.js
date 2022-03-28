@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import { Rating } from 'semantic-ui-react'
+import getPrice from "../utilites/itemPrice";
 
 
 
@@ -19,14 +20,7 @@ export default function MediaCard({ product, productId }) {
   const [value, setValue] = React.useState(2);
 
 
-  // if discount exists
-  let price = 0
-  if (product.discount) {
-    price = Math.floor(parseFloat(product.oldprice) * (1 - (parseFloat(product.discount) / 100)))
-  } else {
-    price = Math.floor(product.oldprice)
-  }
-
+ 
 
   return (
     <Link to={`../pages/detailes/${productId}`}>
@@ -34,8 +28,6 @@ export default function MediaCard({ product, productId }) {
         {
           product.discount ? <span className="mediacardDes" > {product.discount}%</span> : null
         }
-
-
         <CardMedia
           component="img"
           height="240"
@@ -53,7 +45,7 @@ export default function MediaCard({ product, productId }) {
 
             <Typography variant="body2" variant="h5" color="text.secondary">
 
-              EGP {price}
+              EGP {getPrice(product)}
 
             </Typography>
 

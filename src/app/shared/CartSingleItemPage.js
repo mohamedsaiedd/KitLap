@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart as addToCartDispatch, removeFromCart as removeFromCartDispatch } from "../redux/reducers/cartReducer/actionsCreator"
 import { CustomizedSnackbarAdd} from "./snackBar"
 import {CustomizedSnackbarRemove } from "./snackBar"
-
+import getPrice from '../utilites/itemPrice'
 
 
 const CartSingleItemPage = ({ product, productId }) => {
@@ -38,7 +38,7 @@ const CartSingleItemPage = ({ product, productId }) => {
                     {product.title}
                 </p>
 
-                <span>EGP {product.price}</span>
+                <span>EGP {getPrice(product)} </span>
                 <div className="quantitySection">
                     <Button onClick={e => removeFromCart(e)} variant="contained" className='successBtn ' >
                     < CustomizedSnackbarRemove />

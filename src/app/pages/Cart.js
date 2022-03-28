@@ -19,9 +19,7 @@ const Cart = () => {
   const cartStore = useSelector(state => state.cartReducer)
 
   console.log("cart Test", cartStore)
-  
       return (
-        
         <div className="container p-md-0">
           <div className="az-content-body">
             <h3>Cart ( {cartStore.menuAccItems.length} )</h3>

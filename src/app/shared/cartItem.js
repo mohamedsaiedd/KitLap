@@ -1,10 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux";
 import cartReducer from "../redux/reducers/cartReducer/cartReducer";
-
-
-
-
+import getPrice from '../utilites/itemPrice'
 const CartItem = () => {
 
     const cartStore = useSelector(state => state.cartReducer)
@@ -32,7 +29,7 @@ const CartItem = () => {
                                 product.duplication
                             }
                             </p>
-                            <span>EGP {product.price}</span>
+                            <span>EGP {getPrice(product)}</span>
                            
                         </div>
                         

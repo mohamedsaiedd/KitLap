@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 5,
-      "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+      "title": "John Hardy Women's Legends Naga Gold",
       "price": "1,695",
       "oldprice": "2695",
       "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
@@ -21,7 +21,6 @@
       "oldprice": "1695",
       "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
       "category": "jewelery",
-      "discount": "9",
       "image": "https://flone-react.pages.dev/assets/img/product/furnitures/1.jpg",
       "rating": {
         "rate": 3.9,
@@ -77,7 +76,6 @@
       "oldprice": "2695",
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
-      "discount": "22",
       "image": "https://flone-react.pages.dev/assets/img/product/accessories/8.jpg",
       "rating": {
         "rate": 3.9,
@@ -105,7 +103,6 @@
       "oldprice": "2695",
       "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
       "category": "men's clothing",
-      "discount": "32",
       "image": "https://flone-react.pages.dev/assets/img/product/accessories/2.jpg",
       "rating": {
         "rate": 4.7,
@@ -133,7 +130,6 @@
       "oldprice": "2695",
       "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
       "category": "jewelery",
-      "discount": "72",
       "image": "https://flone-react.pages.dev/assets/img/product/furnitures/5.jpg",
       "rating": {
         "rate": 1.9,
@@ -175,7 +171,6 @@
       "oldprice": "2695",
       "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
       "category": "electronics",
-      "discount": "22",
       "image": "https://flone-react.pages.dev/assets/img/product/electronics/3.jpg",
       "rating": {
         "rate": 2.9,
@@ -189,7 +184,6 @@
       "oldprice": "2695",
       "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
       "category": "electronics",
-      "discount": "72",
       "image": "https://flone-react.pages.dev/assets/img/product/electronics/4.jpg",
       "rating": {
         "rate": 4.8,

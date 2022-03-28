@@ -3,20 +3,27 @@ import { Link, useParams, withRouter } from "react-router-dom";
 import axios from "axios"
 import { Image } from 'semantic-ui-react'
 import MediaCard from '../shared/ItemCard';
-import { Grid ,Button } from '@material-ui/core';
+import { Grid, Button } from '@material-ui/core';
 import Header from '../shared/Header';
-import { useDispatch , useSelector } from 'react-redux';
-import  {addToCart as addToCartDispatch , removeFromCart as removeFromCartDispatch } from "../redux/reducers/cartReducer/actionsCreator"
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart as addToCartDispatch, removeFromCart as removeFromCartDispatch } from "../redux/reducers/cartReducer/actionsCreator"
 
 
 
-export function Detailes(ItemCount ) {
+export function Detailes(ItemCount) {
 
-  const dispatch = useDispatch(); 
-  const cartStore = useSelector((state)=> state.cartReducer)  
+  const dispatch = useDispatch();
+  const cartStore = useSelector((state) => state.cartReducer)
   const [product, setProduct] = useState([])
   const [loading, setLoading] = useState(true)
 
+
+  let price = 0
+  if (product.discount) {
+    price = Math.floor(parseFloat(product.oldprice) * (1 - (parseFloat(product.discount) / 100)))
+  } else {
+    price = Math.floor(product.oldprice)
+  }
 
   // const [productId, SetProductId] = useState("")
   const { id } = useParams();
@@ -36,23 +43,23 @@ export function Detailes(ItemCount ) {
 
   const addToCart = () => {
     dispatch(addToCartDispatch(product))
-  } 
+  }
   const removeFromCart = () => {
     dispatch(removeFromCartDispatch(product))
-    console.log("productfromdetailes" ,product)
-  } 
+    console.log("productfromdetailes", product)
+  }
 
   const toggleProBanner = () => {
     document.querySelector('.proBanner').classList.toggle("hide");
   }
-  
- console.log( "cartStore" , cartStore)
-  
 
-  return  (
+  console.log("cartStore", cartStore)
+
+
+  return (
     <div>
-      
-    {/* <Header /> */}
+
+      {/* <Header /> */}
       <div className="proBanner">
         <div>
           <span className="d-flex align-items-center purchase-popup">
@@ -67,48 +74,57 @@ export function Detailes(ItemCount ) {
           <Grid container spacing={2} >
 
             <Grid item xs={12} md={8} lg={4} >
-              <img src={product.image}/>
+              <img src={product.image} />
 
             </Grid>
             <Grid className='gridFlex' item xs={12} md={8} lg={8} >
               <div>
-              <h1>
-                {product.title}
-              </h1>
-              
-              <h4 className='productDescription'>
-                {product.description}
-              </h4>
-          
-             
-              <h2 className='productPrice'>
-                EGP {product.price}
-              </h2>
+                <h1>
+                  {product.title}
+                </h1>
+
+                <h4 className='productDescription'>
+                  {product.description}
+                </h4>
+
+                <div className="pricecontent ">
+
+                  <h2 className='productPrice'>
+                    EGP {price}
+                  </h2>
+                  {
+                    product.discount ? <h5 variant="body2" className="oldprice" >
+
+                      EGP {product.oldprice}
+
+                    </h5> : null
+                  }
+                </div>
               </div>
               <div>
-              <Button onClick={event=>addToCart(event)}  variant="contained" className='successBtn cartBtn' >
-                Add To Cart
-              </Button>
+                <Button onClick={event => addToCart(event)} variant="contained" className='successBtn cartBtn' >
+                  Add To Cart
+                </Button>
                 {/* <Button onClick={event=>removeFromCart(event)}  variant="contained" className='successBtn cartBtn' >
                   remove To Cart
                 </Button> */}
-              <Link to="/">
-              <Button  variant="contained" className='continueBtn cartBtn' >
-                Continue Shopping
-              </Button>
-              </Link>
+                <Link to="/">
+                  <Button variant="contained" className='continueBtn cartBtn' >
+                    Continue Shopping
+                  </Button>
+                </Link>
               </div>
             </Grid>
-           
+
 
           </Grid>
-          
+
 
         </div >{/* row */}
       </div>{/* az-content-body */}
 
     </div>
-   
+
   )
 
 }

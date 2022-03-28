@@ -13,16 +13,29 @@ import { Rating } from 'semantic-ui-react'
 
 export default function MediaCard({ product, productId }) {
 
-//get disconted price
-  const price =  Math.floor(parseFloat(product.oldprice) * ( 1- (parseFloat(product.discount) / 100 )))
-  
-  const [value, setValue] = React.useState(2);
- 
-  return (
+  //get disconted price
 
+
+  const [value, setValue] = React.useState(2);
+
+
+  // if discount exists
+  let price = 0
+  if (product.discount) {
+    price = Math.floor(parseFloat(product.oldprice) * (1 - (parseFloat(product.discount) / 100)))
+  } else {
+    price = Math.floor(product.oldprice)
+  }
+
+
+  return (
     <Link to={`../pages/detailes/${productId}`}>
       <Card className="mediaCard" sx={{ maxWidth: 245 }} key={product.id} >
-        <span className="mediacardDes"> {product.discount}%</span>
+        {
+          product.discount ? <span className="mediacardDes" > {product.discount}%</span> : null
+        }
+
+
         <CardMedia
           component="img"
           height="240"
@@ -36,18 +49,21 @@ export default function MediaCard({ product, productId }) {
             {product.title}
 
           </Typography>
-          <div className="pricecontent">
+          <div className="pricecontent ">
 
             <Typography variant="body2" variant="h5" color="text.secondary">
 
               EGP {price}
 
             </Typography>
-            <Typography variant="body2" className="oldprice" variant="h7" color="text.secondary">
+
+            {product.discount ? <Typography variant="body2" className="oldprice" variant="h7" color="text.secondary">
 
               EGP {product.oldprice}
 
-            </Typography>
+            </Typography> : null
+             }
+
           </div>
         </CardContent>
         <CardActions>

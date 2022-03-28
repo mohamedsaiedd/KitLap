@@ -2,8 +2,6 @@ const initaialState = {
     // cartIconNo : 9,
     menuItems: JSON.parse(localStorage.getItem("menuItems")) || [],
     menuAccItems: JSON.parse(localStorage.getItem("menuAccItems")) || [],
-
-
 }
 
 

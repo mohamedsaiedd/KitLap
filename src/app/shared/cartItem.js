@@ -5,7 +5,7 @@ import cartReducer from "../redux/reducers/cartReducer/cartReducer";
 
 
 
-const CartItem = ({ product, productId }) => {
+const CartItem = () => {
 
     const cartStore = useSelector(state => state.cartReducer)
 
@@ -13,7 +13,7 @@ const CartItem = ({ product, productId }) => {
     console.log("cart Test", cartStore)
 
     return (
-        cartStore.menuItems.map(product =>  
+        cartStore.menuItems.map(product =>      
             {
                 return (
                     <div className="media new">

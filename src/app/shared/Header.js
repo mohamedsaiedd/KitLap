@@ -281,7 +281,7 @@ const Header = () => {
             <Dropdown className="az-header-notification  ">
               <Dropdown.Toggle as={"a"} className="new">
                 {/* <i className="typcn typcn-bell"></i> */}
-                <CartIcon ItemCount={cartStore.menuAccItems.length} />
+                <CartIcon ItemCount={cartStore.menuItems.length} />
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <div className="az-dropdown-header mg-b-20 d-sm-none">
@@ -295,10 +295,12 @@ const Header = () => {
                 </div>
                 <h6 className="az-notification-title">Cart</h6>
                 <p className="az-notification-text">
-                  You have {cartStore.menuAccItems.length} items selected
+                  You have {cartStore.menuItems.length} items selected
                 </p>
                 <div className="az-notification-list">
+
                   <CartItem />
+
                 </div>
                 <div className="dropdown-footer">
                   <Link to="/pages/cart">View Cart</Link>

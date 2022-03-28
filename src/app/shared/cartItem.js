@@ -29,7 +29,7 @@ const CartItem = () => {
                                 product.duplication
                             } 
                             </p>
-                            <span>EGP {getPrice(product)}</span>
+                           <p className="totalPrice">Total: <span>  EGP {getPrice(product) * product.duplication}</span></p> 
                            
                         </div>
                         

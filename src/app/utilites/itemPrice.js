@@ -9,7 +9,7 @@ const getPrice = (product) => {
   } else {
     price = Math.floor(product.oldprice)
   }
-  return price;
+  return price  ;
 }
 
 

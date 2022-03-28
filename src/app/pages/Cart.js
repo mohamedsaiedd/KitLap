@@ -22,7 +22,7 @@ const Cart = () => {
       return (
         <div className="container p-md-0">
           <div className="az-content-body">
-            <h3>Cart ( {cartStore.menuAccItems.length} )</h3>
+            <h3>Cart ( {cartStore.menuItems.length} )</h3>
             <hr />
             {
             cartStore.menuItems.map(product => {

@@ -38,7 +38,8 @@ const CartSingleItemPage = ({ product, productId }) => {
                     {product.title}
                 </p>
 
-                <span>EGP {getPrice(product)} </span>
+                <p className="totalPrice">Total: <span>  EGP {getPrice(product) * product.duplication}</span></p> 
+               
                 <div className="quantitySection">
                     <Button onClick={e => removeFromCart(e)} variant="contained" className='successBtn ' >
                     < CustomizedSnackbarRemove />

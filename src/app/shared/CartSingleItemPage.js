@@ -5,8 +5,8 @@ import cartReducer from "../redux/reducers/cartReducer/cartReducer";
 import { Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { addToCart as addToCartDispatch, removeFromCart as removeFromCartDispatch } from "../redux/reducers/cartReducer/actionsCreator"
-import { CustomizedSnackbarAdd} from "./snackBar"
-import {CustomizedSnackbarRemove } from "./snackBar"
+import { CustomizedSnackbarAdd } from "./snackBar"
+import { CustomizedSnackbarRemove } from "./snackBar"
 import getPrice from '../utilites/itemPrice'
 
 
@@ -38,23 +38,23 @@ const CartSingleItemPage = ({ product, productId }) => {
                     {product.title}
                 </p>
 
-                <p className="totalPrice">Total: <span>  EGP {getPrice(product) * product.duplication}</span></p> 
-               
+                <p className="totalPrice">Total: <span>  EGP {getPrice(product) * product.duplication}</span></p>
+
                 <div className="quantitySection">
-                    <Button onClick={e => removeFromCart(e)} variant="contained" className='successBtn ' >
-                    < CustomizedSnackbarRemove />
-                    </Button>
+                    <a onClick={e => removeFromCart(e)} variant="contained" className='successBtn ' >
+                        < CustomizedSnackbarRemove />
+                    </a>
                     <span className="quantityText">
-                        Qty:
+                        
                         <span>
                             {
                                 product.duplication
                             }
                         </span>
                     </span>
-                    <Button onClick={event => addToCart(event)} variant="contained" className='successBtn cartBtn' >
-                   < CustomizedSnackbarAdd />
-                    </Button>
+                    <a onClick={event => addToCart(event)} variant="contained" className='successBtn cartBtn' >
+                        <CustomizedSnackbarAdd />
+                    </a>
                 </div>
             </div>
             <hr />

@@ -24,7 +24,7 @@ const Search = () => {
     const [Products, SetProducts] = useState([])
     const [SearchTarget, setSearchTarget] = useState("");
 
-    let resultsChanged =  false    ;
+    var resultsChanged = false;
 
     return (
         <div className="wrapperSearch">
@@ -36,21 +36,17 @@ const Search = () => {
                             (e) => {
                                 setSearchTarget(e.target.value);
                                 console.log("value", e.target.value)
-                                resultsChanged = true;
-                                console.log("changed")
+                                resultsChanged = true
+                                // console.log(resultsChanged)
                             }
                         }
-                        autocomplete="on"
+                    autocomplete="on"
                     />
                     <i class="fas fa-search"></i>
                 </div>
 
             </div>
-               {
-               
-               
-                (resultsChanged == true) ?
-
+            {
                 Products.filter((product) => {
                     if (SearchTarget === "") {
                         return product
@@ -59,15 +55,18 @@ const Search = () => {
                     }
                 }).map((product, key) => {
                     return (
-                        <div key={key} className="searchResult" >
-                            <p> <span>{product.category}</span>
-                                {product.title} </p>
-                        </div>
+                        (resultsChanged == true) ?
+
+                            <div key={key} className="searchResult" >
+                                <p> <span>{product.category}</span>
+                                    {product.title} </p>
+                            </div>
+                            :
+                            resultsChanged = false
                     )
-                }) :
-                resultsChanged == false
-                
-                
+                })
+
+
             }
         </div>
     )

@@ -38,7 +38,7 @@ const CartSingleItemPage = ({ product, productId }) => {
                     {product.title}
                 </p>
 
-                <p className="totalPrice totalPriceDetailes ">Total: <span>  EGP {getPrice(product) * product.duplication}</span></p>
+                <p className="totalPrice totalPriceDetailes ">  <span>EGP </span> { getPrice(product) }</p>
 
                 <div className="quantitySection">
                     <a onClick={e => removeFromCart(e)} variant="contained" className='successBtn ' >

@@ -6,40 +6,39 @@ const CartItem = () => {
 
     const cartStore = useSelector(state => state.cartReducer)
 
-  
+
     console.log("cart Test", cartStore)
 
     return (
-        cartStore.menuItems.map(product =>      
-            {
-                return (
-                    <div className="media new">
-                        <div className="az-img-user az-img-user-menu ">
-                            <img
+        cartStore.menuItems.map(product => {
+            return (
+                <div className="media new">
+                    <div className="az-img-user az-img-user-menu ">
+                        <img
                             src={product.image}
                             alt={product.title}
-                            ></img>
-                        </div>
-                        <div className="media-body  ">
-                            <p>
+                        ></img>
+                    </div>
+                    <div className="media-body  ">
+                        <p>
                             {product.title}
-                            </p>
-                            <p>
+                        </p>
+                        <p>
                             Qty: {
                                 product.duplication
-                            } 
-                            </p>
-                           <p className="totalPrice">Total: <span>  EGP {getPrice(product) * product.duplication}</span></p> 
-                           
-                        </div>
-                        
-                        </div>
+                            }
+                        </p>
+                        <p className="totalPrice">Price: <span>  EGP {getPrice(product)}</span></p>
 
-                        
-                )
-                
-            }
-        
+                    </div>
+
+                </div>
+
+
+            )
+
+        }
+
         )
 
     )

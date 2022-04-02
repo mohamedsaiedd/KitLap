@@ -27,18 +27,18 @@ const CartSingleItemPage = ({ product, productId }) => {
 
     return (
         <div key={productId} className="media mediaCart new">
-            <div className="az-img-user az-img-user-menu  ">
+            <div className="az-img-user az-img-user-menu  az-img-user-menu-img">
                 <img
                     src={product.image}
                     alt={product.title}
                 ></img>
             </div>
-            <div className="media-body">
+            <div className="media-body mediabodyCart">
                 <p>
                     {product.title}
                 </p>
 
-                <p className="totalPrice">Total: <span>  EGP {getPrice(product) * product.duplication}</span></p>
+                <p className="totalPrice totalPriceDetailes ">Total: <span>  EGP {getPrice(product) * product.duplication}</span></p>
 
                 <div className="quantitySection">
                     <a onClick={e => removeFromCart(e)} variant="contained" className='successBtn ' >

@@ -1,5 +1,5 @@
 .quantitySection {
-    float: right;
+    
     display: flex;
   a {
       margin: 0px !important;
@@ -13,13 +13,26 @@
     height: 150px;
     border-bottom: 1px solid rgba(149, 149, 149, 0.473);
     padding-top: 10px;
+    align-items: center;
+}   
+.imageCartDescripton {
+    // display: flex;
+    align-items: center;
+    text-align: center;
+    // justify-content: center;
+}
+
+.mediaCartDescription {
+    border-bottom: 1px solid rgba(149, 149, 149, 0.473);
+    align-items: center;
+    font-weight: 900;
 }
 .quantityText {
     margin: 0 10px;
     font-size: 1.4rem;
     border: 1px solid #DDD;
     width: 50px !important;
-    height: 35px !important;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,4 +68,47 @@
     span {
         margin-left: 4px;
     }
+}
+.mediacardNoDesc {
+    background-color: transparent !important;
+}
+.MuiCardContent-root {
+    height: 130px;
+}
+.mediabodyCart {
+    width: fit-content;
+    // height: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.mediabodyCartDescription {
+    width: fit-content;
+    // height: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+.az-img-user-menu 
+{
+    height: 100% !important;
+    img {
+
+        border-radius: 0px !important;
+    }
+}
+.totalPrice span {
+    font-weight: 600;
+}
+.quantitySectionDescripton , .totalPriceDescripton , .titleCartDescripton  {
+    width: 33.333333%;
+}
+.imageCartDescripton  , .az-img-user-menu-img{
+    width: 15% !important;
+}
+
+ .quantitySection , .totalPriceDetailes , .mediabodyCart p {
+    width: 33.333333%;
+
 }

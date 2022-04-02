@@ -72,14 +72,15 @@
   .searchResult {
     display: flex;
     margin:  20px;
+ 
     
     // display: none;
 }
 .wrapperSearch {
   backdrop-filter: blur(17px);
   // background-color: white; 
-  // height: 100px;
-  // overflow: hidden;
+  overflow: hidden;
+  // height: 300px;
   width: 500px;
 
 }

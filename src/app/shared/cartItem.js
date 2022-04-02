@@ -20,7 +20,7 @@ const CartItem = () => {
                             alt={product.title}
                             ></img>
                         </div>
-                        <div className="media-body">
+                        <div className="media-body  ">
                             <p>
                             {product.title}
                             </p>

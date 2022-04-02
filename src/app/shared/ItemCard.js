@@ -27,7 +27,7 @@ export default function MediaCard({ product, productId }) {
     <Link to={`../pages/detailes/${productId}`}>
       <Card className="mediaCard" sx={{ maxWidth: 245 }} key={product.id} >
         {
-          product.discount ? <span className="mediacardDes" > {product.discount}%</span> : null
+          product.discount ? <span className="mediacardDes" > {product.discount}%</span> : <span className="mediacardDes  mediacardNoDesc" > </span>
         }
         <CardMedia
           component="img"

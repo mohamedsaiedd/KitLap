@@ -83,7 +83,17 @@ export function Detailes(ItemCount) {
                 <h4 className='productDescription'>
                   {product.description}
                 </h4>
-
+                <ul>
+                  <li>&#10004; product</li>
+                  <li>&#10004; featuers productDescription</li>
+                  <li>&#10004; shipping</li>
+                  <li>&#10004; product Description</li>
+                  <li>&#10004; featuers </li>
+                </ul>
+                <br/>
+                <h7 className='productDescription'>
+                  {product.detailedDescription}
+                </h7>
                 <div className="pricecontent ">
 
                   <h2 className='productPrice'>

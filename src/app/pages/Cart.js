@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 import cartReducer from "../redux/reducers/cartReducer/cartReducer";
 import CartSingleItemPage from "../shared/CartSingleItemPage";
-import { useParams ,Link } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import React, { useState, useEffect, Component, Suspense } from 'react'
 import axios from "axios"
 import { Image } from 'semantic-ui-react'
@@ -58,8 +58,6 @@ const Cart = () => {
         }
 
       </div>
-
-
       <div className="totalCart">
         <div className="totalCartDescripton">
 
@@ -70,17 +68,14 @@ const Cart = () => {
           </p>
           <p className="totalPriceFinal">
             <br />
-
             EGP {sum}
           </p>
-
-         
         </div>
         <button >
           <Link className="btnCheck" to="../../checkout/CheckOut">
             CHECKOUT <span> ( EGP {sum} ) </span>
           </Link>
-          </button>
+        </button>
       </div>
     </div>
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"
+import { Link } from "react-router-dom";
 
 const url = "http://localhost:4000/products"
 const Search = () => {
@@ -13,7 +14,11 @@ const Search = () => {
 
   const [Products, SetProducts] = useState([])
   const [SearchTarget, setSearchTarget] = useState("");
+  const handelSearchTarget = (e) => {
+    e.preventDefault();
+    // SearchTarget.value = "";
 
+  }
   return (
     <div className="wrapperSearch">
       <div className="wrapper">
@@ -32,10 +37,15 @@ const Search = () => {
           (Products.filter((product) => {
             return (product.title.toLowerCase().includes(SearchTarget))
           }).map((product, key) => {
-            return ((<div key={key} className="searchResult" >
-              <p> <span>{product.category}</span>
-                {product.title} </p>
-            </div>)
+            return ((
+              <div key={key} className="searchResult"  >
+                <Link to={`../../pages/detailes/${product.id}`} onClick={(e) => setSearchTarget(null)}>
+                  <p>
+                    {product.title} </p>
+                </Link>
+                <span >{product.category}</span>
+              </div>
+            )
             )
           })) : null
       }

@@ -5,6 +5,7 @@
     a {
         margin: 0px !important;
         border-radius: 7px !important;
+        height: fit-content;
     }
 }
 
@@ -38,7 +39,7 @@
     font-size: 1.4rem;
     border: 1px solid #DDD;
     width: 50px !important;
-
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,6 +95,7 @@
     // height: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: baseline;
 
 }
 

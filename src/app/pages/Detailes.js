@@ -28,7 +28,7 @@ export function Detailes(ItemCount) {
 
   useEffect(() => {
 
-    const url = `http://localhost:4000/products/${id}`
+    const url = `https://api.npoint.io/80fa7d6065ae435c9c72/products/${id}`
 
     axios.get(url).then(res => {
       console.log(res.data)
@@ -90,10 +90,11 @@ export function Detailes(ItemCount) {
                   <li>&#10004; product Description</li>
                   <li>&#10004; featuers </li>
                 </ul>
-                <br/>
+                <br />
+
                 <h7 className='productDescription'>
                   {product.detailedDescription}
-                </h7>
+                </h7> <br />
                 <div className="pricecontent ">
 
                   <h2 className='productPrice'>

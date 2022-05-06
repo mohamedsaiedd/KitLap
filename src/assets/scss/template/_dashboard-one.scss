@@ -110,7 +110,7 @@
   .nav:first-child {
     .nav-link {
       color: $gray-900;
-      display: none;
+      // display: none;
 
       @include media-breakpoint-up(sm) { display: block; }
 

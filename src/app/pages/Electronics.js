@@ -12,7 +12,7 @@ export function ElectronicsCategory() {
   const [categoryName, setCategoryName] = useState("electronics");
 
   useEffect(() => {
-    const url = "http://localhost:4000/products"
+    const url = "https://api.npoint.io/80fa7d6065ae435c9c72/products"
 
 
 
@@ -108,7 +108,7 @@ export function ElectronicsCategory() {
               ({ category }) =>
                 categoryName == category
             ).map(product => (
-              <Grid item xs={12}   md={4} lg={3} >
+              <Grid item xs={12} md={4} lg={3} >
                 <MediaCard product={product} productId={product.id} />
               </Grid>
             )

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios"
 import { Link } from "react-router-dom";
 
-const url = "http://localhost:4000/products"
+const url = "https://api.npoint.io/80fa7d6065ae435c9c72/products"
 const Search = () => {
   useEffect(() => {
     axios.get(url)

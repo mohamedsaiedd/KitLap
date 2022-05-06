@@ -23,46 +23,46 @@ export function CustomizedSnackbarAdd() {
   };
 
   return (
-   <div>
-      <Button  onClick={handleClick}>
+    <div>
+      <Button onClick={handleClick}>
         +
       </Button>
       <Snackbar className='snackBar' open={open} autoHideDuration={1000} onClose={handleClose}>
-        <Alert  onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
           this Product is Added
         </Alert>
       </Snackbar>
-     
-      </div>
+
+    </div>
   );
 }
 
 
 export function CustomizedSnackbarRemove() {
-    const [open, setOpen] = React.useState(false);
-  
-    const handleClick = () => {
-      setOpen(true);
-    };
-  
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-      setOpen(false);
-    };
-  
-    return (
-     <div>
-        <Button  onClick={handleClick}>
-          -
-        </Button>
-        <Snackbar className='snackBar' open={open} autoHideDuration={1000} onClose={handleClose}>
-          <Alert  onClose={handleClose} severity="error" sx={{ width: '100%' }}>
-            this Product is Removed
-          </Alert>
-        </Snackbar>
-       
-        </div>
-    );
-  }
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <Button onClick={handleClick}>
+        -
+      </Button>
+      <Snackbar className='snackBar' open={open} autoHideDuration={1000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+          this Product is Removed
+        </Alert>
+      </Snackbar>
+
+    </div>
+  );
+}

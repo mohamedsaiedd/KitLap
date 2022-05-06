@@ -892,7 +892,11 @@
     }
   }
 }
-
+.az-header {
+  position: fixed !important;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.295);
+}
 .az-header-profile {
   display: flex;
   flex-direction: column;

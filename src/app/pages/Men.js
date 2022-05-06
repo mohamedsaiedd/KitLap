@@ -12,7 +12,7 @@ export function MenCategory() {
   const [categoryName, setCategoryName] = useState("men's clothing");
 
   useEffect(() => {
-    const url = "http://localhost:4000/products"
+    const url = "https://jsonkeeper.com/b/Y4TJ/products"
     axios.get(url).then(res => {
       console.log("response", res)
       const data = res.data;
@@ -96,7 +96,7 @@ export function MenCategory() {
               ({ category }) =>
                 categoryName == category
             ).map(product => (
-              <Grid item xs={12}   md={4} lg={3} >
+              <Grid item xs={12} md={4} lg={3} >
                 <MediaCard product={product} productId={product.id} />
               </Grid>
             )

@@ -14,7 +14,7 @@ export function Dashboard(ItemCount) {
 
 
   useEffect(() => {
-    const url = "http://localhost:4000/products"
+    const url = "https://api.npoint.io/80fa7d6065ae435c9c72/products"
     // const url = ""
 
     const fetchData = async () => {

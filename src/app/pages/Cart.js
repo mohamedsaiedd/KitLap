@@ -64,7 +64,7 @@ const Cart = () => {
           <p className="totalPriceDesctionFinal">
             <span>CART SUMMARY</span>
             <br />
-            Subtotal :
+            Subtotal
           </p>
           <p className="totalPriceFinal">
             <br />

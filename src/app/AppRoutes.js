@@ -30,6 +30,7 @@ const ElectronicsCategory = lazy(() => import('./pages/Electronics'))
 const Cart = lazy(() => import('./pages/Cart'))
 
 const Detailes = lazy(() => import('./pages/Detailes'))
+const AddProducts = lazy(() => import('./form/addProducts'))
 
 
 export class AppRoutes extends Component {
@@ -62,6 +63,7 @@ export class AppRoutes extends Component {
           <Route exact path="/pages/cart" component={  Cart } />
 
           <Route exact path="/pages/detailes/:id" component={  Detailes } />
+          <Route exact path="/form/addProducts" component={  AddProducts } />
 
           
           <Route exact path="/charts/chartjs" component={ ChartJs } />

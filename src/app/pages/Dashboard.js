@@ -14,8 +14,9 @@ export function Dashboard(ItemCount) {
 
 
   useEffect(() => {
-    const url = "https://api.npoint.io/80fa7d6065ae435c9c72/products"
-    // const url = ""
+    // const url = "https://api.npoint.io/80fa7d6065ae435c9c72/products"
+    const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
+
 
     const fetchData = async () => {
 

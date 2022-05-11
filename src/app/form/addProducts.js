@@ -1,27 +1,31 @@
-import React , {useState , useRef  }  from 'react';
+import React , {useState  }  from 'react';
 import axios from "axios"
 
 const AddProducts = () => {
-    const [AddProduct, setAddProduct] = useState({})
-
-//using ref for selecting dom elements
-        const titleRef = useRef(null);
-        const imageRef = useRef(null);
-        const descriptonRef = useRef(null);
-        const priceRef = useRef(null);
-        const discountRateRef = useRef(null);
-
-        const url = "https://kitlap.monady.tk/api/Products/AddProduct"
-        const pushProduct = () => {
-
-            titleRef.current = AddProduct.title
-            console.log(titleRef.current)
-            imageRef.current = AddProduct.imageUrl
-            descriptonRef.current = AddProduct.description
-            priceRef.current = AddProduct.price
-            discountRateRef.current = AddProduct.discountRate
+    // const [AddProduct, setAddProduct] = useState({ 
+    //     "title": "string",
+    //     "description": "string",
+    //     "imageUrl": "string",
+    //     "price": 0,
+    //     "hasDiscount": true,
+    //     "discountRate": 1
+    //    })
+    const [title, settitle] = useState("")
+    const [imageUplaoded, setimage] = useState("")
+    const [description, setdescription] = useState("")
+    const [price, setprice] = useState()
+    const [discountRate, setdiscountRate] = useState()
+    const imageUrl  =  URL.createObjectURL();
+    //  imageUplaoded = URL.createObjectURL(imageUrl);
+    
+    const url = "https://kitlap.monady.tk/api/Products/AddProduct"
+    const pushProduct = (e) => {
+        e.preventDefault();
+        const AddProduct = {title , imageUrl , description , price , discountRate }
         
-            axios.post(url,  AddProduct ).then(res => {
+            console.log(AddProduct)
+
+            axios.post(url, AddProduct ).then(res => {
                 console.log(res);
                 console.log(res.data);
             })
@@ -31,18 +35,18 @@ const AddProducts = () => {
             //  <button onClick={pushProduct}>AddProduct</button>
          
                 <div>
-                    {/* product Title: */}
-                    <input ref={titleRef} type="text" name="title"  /> <br/>
+                    product Title:
+                    <input  type="text" name="title" onChange={(e) => settitle(e.target.value)}  /> <br/>
                     product Image:
-                    <input ref={imageRef} type="file" name="image"  /> <br/>
+                    <input  type="file" name="imageUplaoded" accept="image/png, image/jpeg, image/gif" onChange={(e) => setimage(e.target.value)}/> <br/>
                     product descripton:
-                    <input ref={descriptonRef} type="text" name="description"  /><br/>
+                    <input  type="text" name="description" onChange={(e) => {setdescription(e.target.value)}} /><br/>
                     product price:
-                    <input  ref={priceRef} type="text" name="price"/><br/>
+                    <input   type="text" name="price" onChange={(e) => setprice(e.target.value)}/><br/>
                     product discountRate:
-                    <input ref={discountRateRef} type="text" name="discountRate" /><br/> 
+                    <input type="text" name="discountRate" onChange={(e) => setdiscountRate(e.target.value)} /><br/> 
             
-                      <button onClick={pushProduct}>AddProduct</button>
+                      <button onClick={(e) => pushProduct(e)}>AddProduct</button>
                 </div>
            
          

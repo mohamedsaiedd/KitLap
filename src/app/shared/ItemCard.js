@@ -10,18 +10,11 @@ import { Icon } from '@iconify/react';
 import { Rating } from 'semantic-ui-react'
 import getPrice from "../utilites/itemPrice";
 
-
-
-
 export default function MediaCard({ product, productId }) {
 
   //get disconted price
 
-
   const [value, setValue] = React.useState(2);
-
-
- 
 
   return (
     <Link to={`../pages/detailes/${productId}`}>
@@ -35,7 +28,6 @@ export default function MediaCard({ product, productId }) {
           image={product.imageUrl}
           alt="item"
         />
-
         <CardContent>
           <Typography gutterBottom variant="h7" component="div">
 
@@ -56,7 +48,6 @@ export default function MediaCard({ product, productId }) {
 
             </Typography> : null
              }
-
           </div>
         </CardContent>
         <CardActions>

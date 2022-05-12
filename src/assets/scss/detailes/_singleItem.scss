@@ -149,15 +149,26 @@
 }
 
 .totalCartDescripton {
+    display: flex;
+    flex-direction: column;
 
     .totalPriceDesctionFinal {
         font-size: 1.3rem;
         font-weight: 100;
     }
 
+    .subtotalFinal {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .totalPriceFinal {
         font-size: 1.3rem;
         font-weight: 900;
+        // align-items: end;
+        // display: flex;
 
     }
 
@@ -236,4 +247,34 @@
 
 .MuiButton-text:hover {
     background-color: #963d2d !important;
+}
+
+//promocode
+.promocode {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  
+
+    .Promocodebtn:hover {
+        background-color: #963d2d;
+        border: none;
+        
+
+
+    }
+    .Promocodebtn {
+
+        border-radius: unset !important;
+    }
+   
+
+    form {
+        display: flex;
+        flex-direction: row;
+        input {
+            border: none !important;
+        }
+    }
 }

@@ -14,9 +14,9 @@ export function Dashboard(ItemCount) {
 
 
   useEffect(() => {
-    // const url = "https://api.npoint.io/80fa7d6065ae435c9c72/products"
-    const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
-
+    // product's images in api must be string value
+    const url = "https://api.npoint.io/936050ffe8d488fcad58/products"
+    // const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
 
     const fetchData = async () => {
 
@@ -35,11 +35,9 @@ export function Dashboard(ItemCount) {
 
   let now = new Date();
 
-
   const toggleProBanner = () => {
     document.querySelector('.proBanner').classList.toggle("hide");
   }
-
   return (
     <div>
       <div className="proBanner">
@@ -87,14 +85,13 @@ export function Dashboard(ItemCount) {
               <Link to="../pages/women" className="nav-link "> Women </Link>
               <Link to="../pages/electronics" className="nav-link "> Electronics </Link>
               <Link to="./" className="nav-link active "> All </Link>
-
             </nav>
 
             <nav className="nav">
-              <a className="nav-link" href="#/">Free Shipping</a>
-              <a className="nav-link" href="#/">Originals</a>
-              <a className="nav-link" href="#/">Top Deals</a>
-              <a className="nav-link" href="#/"></a>
+                <a className="nav-link" href="#/">Free Shipping</a>
+                <a className="nav-link" href="#/">Originals</a>
+                <a className="nav-link" href="#/">Top Deals</a>
+                <a className="nav-link" href="#/"></a>
             </nav>
           </div>
 
@@ -102,6 +99,7 @@ export function Dashboard(ItemCount) {
             {Products.map(product => (
               <Grid item xs={12} md={4} lg={3}>
                 <MediaCard product={product} productId={product.id} />
+                {console.log(product.id)}
               </Grid>
             ))}
           </Grid>

@@ -16,22 +16,15 @@ export function Detailes(ItemCount) {
   const [product, setProduct] = useState([])
   const [loading, setLoading] = useState(true)
 
-  let price = 0
-  if (product.discount) {
-    price = Math.floor(parseFloat(product.oldprice) * (1 - (parseFloat(product.discount) / 100)))
-  } else {
-    price = Math.floor(product.oldprice)
-  }
-
   // const [productId, SetProductId] = useState("")
   const { id } = useParams();
 
   useEffect(() => {
 
-    const url = `https://api.npoint.io/80fa7d6065ae435c9c72/products/${id}`
+    const url = `https://api.npoint.io/936050ffe8d488fcad58/products/${id-1}`
 
     axios.get(url).then(res => {
-      console.log(res.data)
+      console.log(res.data) 
       setProduct(res.data);
       setLoading(false)
     })
@@ -51,7 +44,7 @@ export function Detailes(ItemCount) {
     document.querySelector('.proBanner').classList.toggle("hide");
   }
 
-  console.log("cartStore", cartStore)
+  // console.log("cartStore", cartStore)
 
 
   return (

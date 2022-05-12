@@ -9,6 +9,7 @@ import { Image } from 'semantic-ui-react'
 import MediaCard from '../shared/ItemCard';
 import { Grid, Button } from '@material-ui/core';
 import Header from '../shared/Header';
+import Promocode from '../operations/Promocode'
 // import  { removeFromCart as removeFromCartDispatch } from "../redux/reducers/cartPageReducer/actionCreators"
 // import { useSelector } from 'react-redux';
 
@@ -60,16 +61,21 @@ const Cart = () => {
       </div>
       <div className="totalCart">
         <div className="totalCartDescripton">
+              <span>CART SUMMARY</span>
+            <p className="totalPriceDesctionFinal">
+              <br />
+              <Promocode sum={sum}  />
+              <br />
 
-          <p className="totalPriceDesctionFinal">
-            <span>CART SUMMARY</span>
-            <br />
-            Subtotal
-          </p>
-          <p className="totalPriceFinal">
-            <br />
-            EGP {sum}
-          </p>
+            </p>
+            <div className="subtotalFinal">
+              Subtotal
+              <p className="totalPriceFinal">
+
+                <br />
+                EGP {sum}
+              </p>
+            </div>
         </div>
         <button >
           <Link className="btnCheck" to="../../checkout/CheckOut">

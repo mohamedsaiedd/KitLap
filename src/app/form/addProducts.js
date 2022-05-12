@@ -11,11 +11,11 @@ const AddProducts = () => {
     //     "discountRate": 1
     //    })
     const [title, settitle] = useState("")
-    const [imageUplaoded, setimage] = useState("")
+    const [imageUrl, setimage] = useState("")
     const [description, setdescription] = useState("")
     const [price, setprice] = useState()
     const [discountRate, setdiscountRate] = useState()
-    const imageUrl  =  URL.createObjectURL();
+    // const imageUrl  =  URL.createObjectURL();
     //  imageUplaoded = URL.createObjectURL(imageUrl);
     
     const url = "https://kitlap.monady.tk/api/Products/AddProduct"

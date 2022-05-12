@@ -25,7 +25,7 @@ export default function MediaCard({ product, productId }) {
         <CardMedia
           component="img"
           height="240"
-          image={product.imageUrl}
+          image={product.image}
           alt="item"
         />
         <CardContent>
@@ -34,7 +34,7 @@ export default function MediaCard({ product, productId }) {
             {product.title}
 
           </Typography>
-          <div className="pricecontent ">
+          <div className="pricecontent">
 
             <Typography variant="body2" variant="h5" color="text.secondary">
 

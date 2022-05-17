@@ -15,11 +15,11 @@ export function Dashboard(ItemCount) {
 
   useEffect(() => {
     // product's images in api must be string value
-    const url = "https://api.npoint.io/936050ffe8d488fcad58/products"
-    // const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
+    // const url = "https://api.npoint.io/936050ffe8d488fcad58/products"
+    const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
 
     const fetchData = async () => {
-
+      
       const response = await fetch(url);
       const data = await response.json();
 
@@ -99,7 +99,7 @@ export function Dashboard(ItemCount) {
             {Products.map(product => (
               <Grid item xs={12} md={4} lg={3}>
                 <MediaCard product={product} productId={product.id} />
-                {console.log(product.id)}
+                {console.log(product.id)} 
               </Grid>
             ))}
           </Grid>

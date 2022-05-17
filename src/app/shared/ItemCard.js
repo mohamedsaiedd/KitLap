@@ -25,7 +25,7 @@ export default function MediaCard({ product, productId }) {
         <CardMedia
           component="img"
           height="240"
-          image={product.image}
+          image={product.imageUrl}
           alt="item"
         />
         <CardContent>
@@ -44,7 +44,7 @@ export default function MediaCard({ product, productId }) {
 
             {product.discount ? <Typography variant="body2" className="oldprice" variant="h7" color="text.secondary">
 
-              EGP {product.oldprice}
+              EGP {product.price}
 
             </Typography> : null
              }
@@ -58,8 +58,9 @@ export default function MediaCard({ product, productId }) {
           </Link>
           {/* </Button> */}
 
-          <Typography variant="h7" >{product.category}</Typography>
+          <Typography variant="h7" >{product.categories}</Typography>
           <Rating name="read-only" value={value} readOnly />
+          {/* <button className="deletebtn" onClick={DeleteProduct}>delete</button> */}
 
         </CardActions>
       </Card>

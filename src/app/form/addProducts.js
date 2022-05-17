@@ -11,7 +11,7 @@ const AddProducts = () => {
     //     "discountRate": 1
     //    })
     const [title, settitle] = useState("")
-    const [imageUrl, setimage] = useState("")
+    const [imageUrl, setimage] = useState()
     const [description, setdescription] = useState("")
     const [price, setprice] = useState()
     const [discountRate, setdiscountRate] = useState()
@@ -32,17 +32,15 @@ const AddProducts = () => {
         }
 
         return (
-            //  <button onClick={pushProduct}>AddProduct</button>
-         
                 <div>
                     product Title:
-                    <input  type="text" name="title" onChange={(e) => settitle(e.target.value)}  /> <br/>
+                    <input  type="text" name="title" onChange={(e) => {settitle(e.target.value)} } /> <br/>
                     product Image:
-                    <input  type="file" name="imageUplaoded" accept="image/png, image/jpeg, image/gif" onChange={(e) => setimage(e.target.value)}/> <br/>
+                    <input  type="text" name="imageUplaoded"  onChange={(e) => {setimage(e.target.value)}}/> <br/>
                     product descripton:
                     <input  type="text" name="description" onChange={(e) => {setdescription(e.target.value)}} /><br/>
                     product price:
-                    <input   type="text" name="price" onChange={(e) => setprice(e.target.value)}/><br/>
+                    <input   type="text" name="price" onChange={(e) =>{ setprice(e.target.value)}}/><br/>
                     product discountRate:
                     <input type="text" name="discountRate" onChange={(e) => setdiscountRate(e.target.value)} /><br/> 
             

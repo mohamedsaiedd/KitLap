@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 
 
 const Promocode = ({ sum }) => {
-    
+
     const [kitpromocode, setPromocode] = useState([])
     const [userPromocode, setPromocodeuser] = useState({})
 
@@ -16,7 +16,7 @@ const Promocode = ({ sum }) => {
             if (promocodeKey == userPromocode) {
                 finalPrice = sum * kitpromocode[promocodeKey] / 100
                 console.log(kitpromocode[promocodeKey]);
-              return finalPrice
+                return finalPrice
             }
             else {
                 return "invalid promocode"
@@ -31,7 +31,6 @@ const Promocode = ({ sum }) => {
     useEffect(() => {
 
         const url = "https://api.npoint.io/936050ffe8d488fcad58/promocode"
-
 
         const fetchData = async () => {
 

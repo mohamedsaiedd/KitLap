@@ -21,7 +21,7 @@ export function Detailes(ItemCount) {
 
   useEffect(() => {
 
-    const url = `https://api.npoint.io/936050ffe8d488fcad58/products/${id-1}`
+    const url = `https://api.npoint.io/936050ffe8d488fcad58/products/${id}`
 
     axios.get(url).then(res => {
       console.log(res.data) 

@@ -9,14 +9,17 @@ import Typography from '@material-ui/core/Typography';
 import { Icon } from '@iconify/react';
 import { Rating } from 'semantic-ui-react'
 import getPrice from "../utilites/itemPrice";
-
 export default function MediaCard({ product, productId }) {
 
+  const image = `https://kitlap.monady.tk/app-images/${product.imagesUrl[0]?.imageUrl}`
+  console.log(product)
   //get disconted price
-
-  const [value, setValue] = React.useState(2);
+  
+  const [value, setValue] = React.useState(2);  
+  
 
   return (
+    
     <Link to={`../pages/detailes/${productId}`}>
       <Card className="mediaCard" sx={{ maxWidth: 245 }} key={product.id} >
         {
@@ -25,7 +28,7 @@ export default function MediaCard({ product, productId }) {
         <CardMedia
           component="img"
           height="240"
-          image={product.imageUrl}
+          image = {image}
           alt="item"
         />
         <CardContent>

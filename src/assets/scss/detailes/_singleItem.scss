@@ -1,0 +1,280 @@
+.quantitySection {
+
+    display: flex;
+
+    a {
+        margin: 0px !important;
+        border-radius: 7px !important;
+        height: fit-content;
+    }
+}
+
+.MuiButton-text {
+    color: white !important;
+    backdrop-filter: blur(17px) !important;
+}
+
+.mediaCart {
+    height: 150px;
+    border-bottom: 1px solid rgba(149, 149, 149, 0.473);
+    padding-top: 10px;
+    align-items: center;
+}
+
+.imageCartDescripton {
+    // display: flex;
+    align-items: center;
+    text-align: center;
+    // justify-content: center;
+}
+
+.mediaCartDescription {
+    border-bottom: 1px solid rgba(149, 149, 149, 0.473);
+    align-items: center;
+    font-weight: 900;
+}
+
+.quantityText {
+    margin: 0 10px;
+    font-size: 1.4rem;
+    border: 1px solid #DDD;
+    width: 50px !important;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        font-weight: 400;
+        margin: 0 5px 0 0;
+
+    }
+}
+
+.snackBar {
+    left: auto;
+}
+
+.az-img-user::after {
+    display: none;
+}
+
+.oldprice {
+    text-decoration: line-through;
+    color: rgb(144, 144, 144);
+    margin-left: 10px !important;
+}
+
+.pricecontent {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.totalPrice {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    span {
+        margin-left: 4px;
+    }
+}
+
+.mediacardNoDesc {
+    background-color: transparent !important;
+}
+
+.MuiCardContent-root {
+    height: 130px;
+}
+
+.mediabodyCart {
+    width: fit-content;
+    // height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+
+}
+
+.mediabodyCartDescription {
+    width: fit-content;
+    // height: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.az-img-user-menu {
+    height: 100% !important;
+
+    img {
+
+        border-radius: 0px !important;
+    }
+}
+
+.totalPrice {
+
+    font-weight: 600;
+
+    span {
+        font-weight: 400;
+
+    }
+}
+
+.quantitySectionDescripton,
+.totalPriceDescripton,
+.titleCartDescripton {
+    width: 33.333333%;
+}
+
+.imageCartDescripton,
+.az-img-user-menu-img {
+    width: 15% !important;
+}
+
+.quantitySection,
+.totalPriceDetailes,
+.mediabodyCart p {
+    width: 33.333333%;
+
+}
+
+.az-header-notification.show .dropdown-menu {
+    background-color: #F6F6F6;
+}
+
+.totalCartDescripton {
+    display: flex;
+    flex-direction: column;
+
+    .totalPriceDesctionFinal {
+        font-size: 1.3rem;
+        font-weight: 100;
+    }
+
+    .subtotalFinal {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .totalPriceFinal {
+        font-size: 1.3rem;
+        font-weight: 900;
+        // align-items: end;
+        // display: flex;
+
+    }
+
+
+    span {
+        font-size: 0.7rem;
+        font-weight: 400;
+
+    }
+
+    display: flex;
+    color: #BD4C39;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    // border: 1px solid #DDD ;
+    // padding: 10px;
+    // background-color: #BD4C39 !important;
+
+}
+
+.totalCart {
+    display: flex;
+    width: 30%;
+    // float: right;
+    right: 0px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    position: relative;
+    left: 64%;
+
+    button {
+        width: 50%;
+        height: 30px;
+        align-items: center;
+        width: 70%;
+        height: 50px;
+        border-radius: 7px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        color: white;
+        background-color: #BD4C39;
+        border: none;
+        text-transform: capitalize;
+
+        .btnCheck {
+            color: white !important;
+            text-transform: capitalize;
+            font-weight: 600;
+
+            span {
+                font-weight: 100;
+            }
+        }
+
+
+    }
+
+    button:hover {
+
+        background-color: #F6F6F6;
+        border: 2px solid #BD4C39;
+
+        .btnCheck {
+            color: #BD4C39 !important;
+        }
+    }
+
+
+}
+
+.MuiButton-text {
+    background-color: #BD4C39 !important;
+}
+
+.MuiButton-text:hover {
+    background-color: #963d2d !important;
+}
+
+//promocode
+.promocode {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  
+
+    .Promocodebtn:hover {
+        background-color: #963d2d;
+        border: none;
+        
+
+
+    }
+    .Promocodebtn {
+
+        border-radius: unset !important;
+    }
+   
+
+    form {
+        display: flex;
+        flex-direction: row;
+        input {
+            border: none !important;
+        }
+    }
+}

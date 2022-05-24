@@ -12,7 +12,7 @@ export function ElectronicsCategory() {
   const [categoryName, setCategoryName] = useState("electronics");
 
   useEffect(() => {
-    const url = "https://api.npoint.io/80fa7d6065ae435c9c72/products"
+    const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
 
 
 

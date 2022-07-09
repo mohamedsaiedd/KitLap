@@ -12,7 +12,11 @@ export function MenCategory() {
   const [categoryName, setCategoryName] = useState("men's clothing");
 
   useEffect(() => {
-    const url = "https://jsonkeeper.com/b/Y4TJ/products"
+
+    // const image = `https://kitlap.monady.tk/app-images/${product.imagesUrl[0]?.imageUrl}`
+
+    const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
+
     axios.get(url).then(res => {
       console.log("response", res)
       const data = res.data;

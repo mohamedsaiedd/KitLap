@@ -12,7 +12,8 @@ export function WomenCategory() {
   const [categoryName, setCategoryName] = useState("women's clothing");
 
   useEffect(() => {
-    const url = "https://api.npoint.io/80fa7d6065ae435c9c72/products"
+
+    const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
 
     const fetchData = async () => {
 

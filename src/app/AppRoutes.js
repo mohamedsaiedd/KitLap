@@ -31,45 +31,59 @@ const Cart = lazy(() => import('./pages/Cart'))
 
 const Detailes = lazy(() => import('./pages/Detailes'))
 const AddProducts = lazy(() => import('./form/addProducts'))
+const EnhancedTable = lazy(() => import('./admin/cpanel'))
+
+const Products = lazy(() => import('./admin/products'))
+
+
+
+const Page404 = lazy(() => import('./shared/page404'))
 
 
 export class AppRoutes extends Component {
   render() {
     return (
-      <Suspense fallback={<LoaderUi/>}>
+      <Suspense fallback={<LoaderUi />}>
         <Switch>
           <Route exact path="/">
+
             <Redirect to="/dashboard"></Redirect>
           </Route>
-          <Route exact path="/dashboard" component={ Dashboard } />
+          <Route exact path="/dashboard" component={Dashboard} />
 
-          <Route exact path="/general-pages/signin" component={ Signin } />
-          <Route exact path="/general-pages/signup" component={ Signup } />
 
-          <Route exact path="/ui-elements/buttons" component={ Buttons } />
-          <Route exact path="/ui-elements/dropdowns" component={ Dropdowns } />
-          <Route exact path="/ui-elements/icons" component={ Icons } />
+          <Route exact path="/general-pages/signin" component={Signin} />
 
-          <Route exact path="/form/form-elements" component={ FormElements } />
+          <Route exact path="/general-pages/signup" component={Signup} />
 
-          <Route exact path="/checkout/checkout" component={ CheckOut } />
+          <Route exact path="/ui-elements/buttons" component={Buttons} />
+          <Route exact path="/ui-elements/dropdowns" component={Dropdowns} />
+          <Route exact path="/ui-elements/icons" component={Icons} />
 
-          <Route exact path="/pages/men" component={ MenCategory } />
+          <Route exact path="/form/form-elements" component={FormElements} />
 
-          <Route exact path="/pages/women" component={ WomenCategory } />
+          <Route exact path="/checkout/checkout" component={CheckOut} />
 
-          <Route exact path="/pages/electronics" component={  ElectronicsCategory } />
+          <Route exact path="/pages/men" component={MenCategory} />
 
-          <Route exact path="/pages/cart" component={  Cart } />
+          <Route exact path="/pages/women" component={WomenCategory} />
 
-          <Route exact path="/pages/detailes/:id" component={  Detailes } />
-          <Route exact path="/form/addProducts" component={  AddProducts } />
+          <Route exact path="/pages/electronics" component={ElectronicsCategory} />
 
-          
-          <Route exact path="/charts/chartjs" component={ ChartJs } />
+          <Route exact path="/pages/cart" component={Cart} />
 
-          <Route exact path="/tables/basic-table" component={ BasicTable } />
+          <Route exact path="/pages/detailes/:id" component={Detailes} />
+          <Route exact path="/form/addProducts" component={AddProducts} />
 
+
+          <Route exact path="/charts/chartjs" component={ChartJs} />
+
+          <Route exact path="/tables/basic-table" component={BasicTable} />
+          <Route exact path="/Admin/cpanel" component={EnhancedTable} />
+
+          <Route exact path="/admin/products" component={Products} />
+
+          <Route component={Page404} />
         </Switch>
       </Suspense>
     )

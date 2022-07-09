@@ -14,12 +14,12 @@ export default function MediaCard({ product, productId }) {
   const image = `https://kitlap.monady.tk/app-images/${product.imagesUrl[0]?.imageUrl}`
   console.log(product)
   //get disconted price
-  
-  const [value, setValue] = React.useState(2);  
-  
+
+  const [value, setValue] = React.useState(2);
+
 
   return (
-    
+
     <Link to={`../pages/detailes/${productId}`}>
       <Card className="mediaCard" sx={{ maxWidth: 245 }} key={product.id} >
         {
@@ -28,7 +28,7 @@ export default function MediaCard({ product, productId }) {
         <CardMedia
           component="img"
           height="240"
-          image = {image}
+          image={image}
           alt="item"
         />
         <CardContent>
@@ -50,7 +50,7 @@ export default function MediaCard({ product, productId }) {
               EGP {product.price}
 
             </Typography> : null
-             }
+            }
           </div>
         </CardContent>
         <CardActions>

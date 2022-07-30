@@ -21,10 +21,13 @@ export function Detailes(ItemCount) {
 
   useEffect(() => {
 
-    const url = `https://api.npoint.io/936050ffe8d488fcad58/products/${id}`
+    // const url = `https://api.npoint.io/936050ffe8d488fcad58/products/${id}`
+    const url = `http://localhost:3000/products/${id}`
+
+
 
     axios.get(url).then(res => {
-      console.log(res.data) 
+      console.log(res.data)
       setProduct(res.data);
       setLoading(false)
     })
@@ -88,17 +91,19 @@ export function Detailes(ItemCount) {
                 <h7 className='productDescription'>
                   {product.detailedDescription}
                 </h7> <br />
-                <div className="pricecontent ">
+                <div className="pricecontent">
 
                   <h2 className='productPrice'>
                     EGP {getPrice(product)}
+
                   </h2>
                   {
-                    product.discount ? <h5 variant="body2" className="oldprice" >
+                    product.discount ?
+                      <h5 variant="body2" className="oldprice" >
 
-                      EGP {product.oldprice}
+                        EGP {product.price}
 
-                    </h5> : null
+                      </h5> : null
                   }
                 </div>
               </div>

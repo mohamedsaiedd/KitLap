@@ -63,7 +63,7 @@ export default function MediaCard({ product, productId }) {
           </Link>
           {/* </Button> */}
 
-          <Typography variant="h7" >{product.categories}</Typography>
+          <Typography variant="h7" >{product.category}</Typography>
           <Rating name="read-only" value={value} readOnly />
           {/* <button className="deletebtn" onClick={DeleteProduct}>delete</button> */}
 

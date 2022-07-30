@@ -3,11 +3,11 @@
     {
       "id": 0,
       "title": "John Hardy Women's Legends Naga Gold",
-      "price": "1,695",
+      "price": 1695,
       "oldprice": "2695",
       "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
       "detailedDescription": "John Hardy Women's Legends Naga Gold From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-      "category": "jewelery",
+      "category": "furniture",
       "discount": "14",
       "image": "https://flone-react.pages.dev/assets/img/product/furnitures/6.jpg",
       "rating": {
@@ -18,11 +18,11 @@
     {
       "id": 1,
       "title": "Solid Gold Petite Micropave ",
-      "price": "1,868",
+      "price": 1868,
       "oldprice": "1695",
       "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
       "detailedDescription": "John Hardy Women's Legends Naga Gold From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-      "category": "jewelery",
+      "category": "furniture",
       "image": "https://flone-react.pages.dev/assets/img/product/furnitures/1.jpg",
       "rating": {
         "rate": 3.9,
@@ -36,7 +36,7 @@
       "oldprice": "1695",
       "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
       "detailedDescription": "John Hardy Women's Legends Naga Gold From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-      "category": "jewelery",
+      "category": "furniture",
       "discount": "31",
       "image": "https://flone-react.pages.dev/assets/img/product/furnitures/2.jpg",
       "rating": {
@@ -51,7 +51,7 @@
       "oldprice": "695",
       "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
       "detailedDescription": "John Hardy Women's Legends Naga Gold From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-      "category": "jewelery",
+      "category": "furniture",
       "discount": "3",
       "image": "https://flone-react.pages.dev/assets/img/product/furnitures/3.jpg",
       "rating": {
@@ -66,7 +66,7 @@
       "oldprice": "2695",
       "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
       "detailedDescription": "John Hardy Women's Legends Naga Gold From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-      "category": "jewelery",
+      "category": "furniture",
       "discount": "42",
       "image": "https://flone-react.pages.dev/assets/img/product/furnitures/4.jpg",
       "rating": {

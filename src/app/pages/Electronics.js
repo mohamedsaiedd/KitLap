@@ -12,7 +12,9 @@ export function ElectronicsCategory() {
   const [categoryName, setCategoryName] = useState("electronics");
 
   useEffect(() => {
-    const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
+    // const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
+    const url = "http://localhost:3000/products"
+
 
 
 

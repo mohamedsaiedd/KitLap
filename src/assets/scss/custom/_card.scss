@@ -19,6 +19,21 @@
 }
 
 // card element 
+.MuiCard-root {
+    display: flex;
+    flex-direction: column;
+    img {
+        height: 200px;
+    }
+}
+.MuiCardActions-root {
+    justify-content: end;
+    opacity: 0.5;
+
+}
+.MuiCardContent-root {
+    height: 100px !important;
+}
 .addToCartBtn {
     height: 100%;
     align-items: flex-end;

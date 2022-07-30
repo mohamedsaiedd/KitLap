@@ -101,6 +101,7 @@
 
 //search results filter wrap
 .searchResultsWrap {
-  height: 208px;
+  // height: 208px;
+  max-height: 200px;
   overflow: scroll;
 }

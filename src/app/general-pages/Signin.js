@@ -5,30 +5,31 @@ import axios from "axios";
 const url = "http://localhost:3000/users"
 
 
-//login 
-
-const login = (email, password) => {
-  console.log(email, password)
-  return axios
-    .post(url, {
-
-    }).then((response) => {
-      if (response.data.accessToken) {
-        localStorage.setItem("user", JSON.stringify(response.data))
-      }
-      return response.data
-    }
-    )
-}
-
-
 
 const Signin = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const login = () => {
+    // console.log(email, password)
+    axios.post(url, {
+      email: email,
+      password: password
+    }).then((response) => {
+      console.log(response.data)
+      // if (response.data.accessToken) {
+      localStorage.setItem("user", JSON.stringify(response.data))
+      // }
+      return response.data
+    }
+    )
+      .catch(error => {
+        console.log(error)
 
+      }
+      )
+  }
   return (
     <div>
       <div className="az-signin-wrapper">
@@ -39,16 +40,19 @@ const Signin = () => {
             <h2>Welcome back!</h2>
             <h4>Please sign in to continue</h4>
 
-            <form action="#/" onSubmit={login}>
+            <form action="#/" onSubmit={() => login()} >
               <div className="form-group">
                 <label>Email</label>
-                <input type="text" className="form-control" placeholder="Enter your email" required onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" className="form-control" placeholder="Enter your email" required onChange={(e) => setEmail(e.target.value)} />
               </div>{/* form-group */}
               <div className="form-group">
                 <label>Password</label>
-                <input type="password" className="form-control" placeholder="Enter your password" required onChange={(e) => setPassword(e.target.value)} />
+                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and \n  one uppercase and lowercase letter, \n and at least 8 or more characters" className="form-control" placeholder="Enter your password" required onChange={(e) => setPassword(e.target.value)} />
               </div>{/* form-group */}
               <button className="btn btn-az-primary btn-block">Sign In </button>
+              {
+                // console.log(email, password)
+              }
             </form>
           </div>
           <div className="az-signin-footer">
@@ -57,6 +61,7 @@ const Signin = () => {
           </div>
         </div>
       </div>
+
     </div>
   )
 

@@ -11,25 +11,28 @@ import { useSelector } from "react-redux"
 
 export function Dashboard(ItemCount) {
   const [Products, SetProducts] = useState([])
-
-
   useEffect(() => {
     // product's images in api must be string value
     // const url = "https://api.npoint.io/936050ffe8d488fcad58/products"
-    const url = "http://localhost:3000/products"
-
+    const url = "http://localhost:4000/products?_page=1"
+    
     const fetchData = async () => {
-
+      
       const response = await fetch(url);
       const data = await response.json();
-
+      
       // const data = JSON.parse(data1)
       SetProducts(data);
-
+      
     };
     fetchData();
-
+    
   }, []);
+  const url = "http://localhost:4000/products?_page=1"
+  
+      const showMore = () => {
+        window.history.pushState(url , "http://localhost:4000/products?_page=2")
+      }
 
   // console.log(Products)
 
@@ -103,6 +106,11 @@ export function Dashboard(ItemCount) {
               </Grid>
             ))}
           </Grid>
+
+          <br />
+          <a onClick={showMore()}>
+            load more
+          </a>
 
         </div>{/* row */}
       </div>{/* az-content-body */}

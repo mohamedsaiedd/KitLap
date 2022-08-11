@@ -2,31 +2,31 @@ import React, { Component, useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import axios from "axios";
 
-const url = "http://localhost:3000/users"
+const url = "http://localhost:4000/users"
 
 
 
 const Signin = () => {
-
+  // e.preventDefault();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const login = () => {
-    // console.log(email, password)
+   
     axios.post(url, {
       email: email,
-      password: password
+      password: password,
+      accessToken : "asasdyuioweudheoidf7wedy"
     }).then((response) => {
-      console.log(response.data)
-      // if (response.data.accessToken) {
-      localStorage.setItem("user", JSON.stringify(response.data))
-      // }
+      if (response.data.accessToken) {
+        localStorage.setItem("userdata", JSON.stringify(response.data))
+       
+      }
       return response.data
     }
     )
       .catch(error => {
         console.log(error)
-
       }
       )
   }
@@ -39,7 +39,6 @@ const Signin = () => {
           <div className="az-signin-header">
             <h2>Welcome back!</h2>
             <h4>Please sign in to continue</h4>
-
             <form action="#/" onSubmit={() => login()} >
               <div className="form-group">
                 <label>Email</label>

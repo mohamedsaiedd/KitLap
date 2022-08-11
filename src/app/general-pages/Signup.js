@@ -1,8 +1,55 @@
-import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component, useEffect, useState, useRef } from 'react'
 
-export class Signup extends Component {
-  render() {
+import {Link} from 'react-router-dom'
+import axios from "axios";
+
+const url = "http://localhost:4000/users"
+
+
+const  Signup = () => {
+
+  const [userName, setUserName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+ 
+ 
+  const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  function generateString(length) {
+      let result = '  ';
+      const charactersLength = characters.length;
+      for ( let i = 0; i < length; i++ ) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      return result;
+    }
+    
+   
+
+
+  const signUpreg = () => {
+   
+    axios.post(url, {
+      userName : userName,
+      email: email,
+      password: password,
+      accessToken : generateString(30)
+    }).then((response) => {
+      if (response.data.accessToken) {
+        localStorage.setItem("userdata", JSON.stringify(response.data))
+       
+      }
+      return response.data
+    }
+    )
+      .catch(error => {
+        console.log(error)
+      }
+      )
+
+      
+  }
+
     return (
       <div>
         <div className="az-signup-wrapper">
@@ -22,20 +69,20 @@ export class Signup extends Component {
               <h2>Get Started</h2>
               <h4>It's free to signup and only takes a minute.</h4>
 
-              <form action="#/">
+              <form action="#/" onSubmit={() => signUpreg()}>
                 <div className="form-group">
                   <label>Firstname &amp; Lastname</label>
-                  <input type="text" className="form-control" placeholder="Enter your firstname and lastname"/>
+                  <input type="text" className="form-control" placeholder="Enter your firstname and lastname" required onChange={(e) => setUserName(e.target.value)}/>
                 </div>{/* form-group */}
                 <div className="form-group">
                   <label>Email</label>
-                  <input type="text" className="form-control" placeholder="Enter your email"/>
+                  <input type="text" className="form-control" placeholder="Enter your email" required onChange={(e) => setEmail(e.target.value)}/>
                 </div>{/* form-group */}
                 <div className="form-group">
                   <label>Password</label>
-                  <input type="password" className="form-control" placeholder="Enter your password"/>
+                  <input type="password" className="form-control" placeholder="Enter your password" required onChange={(e) => setPassword(e.target.value)}/>
                 </div>{/* form-group */}
-                <Link to="/" className="btn btn-az-primary btn-block">Create Account</Link>
+                <button className="btn btn-az-primary btn-block">Create Account</button>
                 <div className="row row-xs">
                   <div className="col-sm-6"><button className="btn btn-block"><i className="fab fa-facebook-f"></i> Signup with Facebook</button></div>
                   <div className="col-sm-6 mg-t-10 mg-sm-t-0"><button className="btn btn-primary btn-block"><i className="fab fa-twitter"></i> Signup with Twitter</button></div>
@@ -49,7 +96,12 @@ export class Signup extends Component {
         </div>{/* az-signup-wrapper */}
       </div>
     )
-  }
-}
+  
 
+
+
+//generate random strings
+
+ 
+}
 export default Signup

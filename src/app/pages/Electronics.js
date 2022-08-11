@@ -13,11 +13,7 @@ export function ElectronicsCategory() {
 
   useEffect(() => {
     // const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
-    const url = "http://localhost:3000/products"
-
-
-
-
+    const url = "http://localhost:4000/products"
     const fetchData = async () => {
 
       const response = await fetch(url);

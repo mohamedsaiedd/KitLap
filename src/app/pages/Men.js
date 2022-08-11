@@ -16,7 +16,7 @@ export function MenCategory() {
     // const image = `https://kitlap.monady.tk/app-images/${product.imagesUrl[0]?.imageUrl}`
 
     // const url = "https://kitlap.monady.tk/api/products/GetAllProductsSummary"
-    const url = "http://localhost:3000/products"
+    const url = "http://localhost:4000/products"
 
 
     axios.get(url).then(res => {

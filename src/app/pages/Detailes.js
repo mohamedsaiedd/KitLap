@@ -8,7 +8,7 @@ import Header from '../shared/Header';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart as addToCartDispatch, removeFromCart as removeFromCartDispatch } from "../redux/reducers/cartReducer/actionsCreator"
 import getPrice from "../utilites/itemPrice";
-
+import Rating from '@mui/material/Rating';
 export function Detailes(ItemCount) {
 
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export function Detailes(ItemCount) {
   useEffect(() => {
 
     // const url = `https://api.npoint.io/936050ffe8d488fcad58/products/${id}`
-    const url = `http://localhost:3000/products/${id}`
+    const url = `http://localhost:4000/products/${id}`
 
 
 
@@ -48,7 +48,6 @@ export function Detailes(ItemCount) {
   }
 
   // console.log("cartStore", cartStore)
-
 
   return (
     <div>
@@ -85,6 +84,9 @@ export function Detailes(ItemCount) {
                   <li>&#10004; shipping</li>
                   <li>&#10004; product Description</li>
                   <li>&#10004; featuers </li>
+                  <li> Rating : 
+                  <Rating name="read-only" value={Math.floor(product.rating?.rate)}  precision={0.5} readOnly />
+                  </li>
                 </ul>
                 <br />
 

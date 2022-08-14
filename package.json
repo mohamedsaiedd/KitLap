@@ -2,6 +2,7 @@
   "name": "demo",
   "version": "0.1.0",
   "homepage": "/",
+  "proxy": "http://localhost:3000",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.0",
@@ -70,6 +71,7 @@
     "extends": "react-app"
   },
   "browserslist": {
+    
     "production": [
       ">0.2%",
       "not dead",

@@ -7,11 +7,14 @@ const url = "http://localhost:4000/users"
 
 
 const  Signup = () => {
+  
+ 
 
   const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
  
+    
  
   const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
@@ -24,11 +27,9 @@ const  Signup = () => {
       return result;
     }
     
-   
-
-
-  const signUpreg = () => {
-   
+    const signUpreg = () => {
+      console.log( rem(4,5))
+    // window.location.replace('http://localhost:3000/preview/dashboard' );
     axios.post(url, {
       userName : userName,
       email: email,
@@ -46,10 +47,8 @@ const  Signup = () => {
         console.log(error)
       }
       )
-
-      
-  }
-
+    }
+    
     return (
       <div>
         <div className="az-signup-wrapper">
@@ -82,7 +81,11 @@ const  Signup = () => {
                   <label>Password</label>
                   <input type="password" className="form-control" placeholder="Enter your password" required onChange={(e) => setPassword(e.target.value)}/>
                 </div>{/* form-group */}
-                <button className="btn btn-az-primary btn-block">Create Account</button>
+                <button className="btn btn-az-primary btn-block" > 
+                  {/* <Link to="/"> */}
+                  Create Account
+                  {/* </Link> */}
+                  </button>
                 <div className="row row-xs">
                   <div className="col-sm-6"><button className="btn btn-block"><i className="fab fa-facebook-f"></i> Signup with Facebook</button></div>
                   <div className="col-sm-6 mg-t-10 mg-sm-t-0"><button className="btn btn-primary btn-block"><i className="fab fa-twitter"></i> Signup with Twitter</button></div>

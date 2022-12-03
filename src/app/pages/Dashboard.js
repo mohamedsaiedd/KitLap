@@ -98,11 +98,11 @@ export function Dashboard(ItemCount) {
           <a onClick={showMore()}>
             load more
           </a>
-          <br />
-          <Test />
+
+          {/* <Test /> */}
 
         </div>{/* row */}
-      </div>{/* az-content-body */}
+      </div>
     </div>
   )
 

@@ -28,7 +28,7 @@ const  Signup = () => {
     }
     
     const signUpreg = () => {
-      console.log( rem(4,5))
+      // console.log( rem(4,5))
     // window.location.replace('http://localhost:3000/preview/dashboard' );
     axios.post(url, {
       userName : userName,

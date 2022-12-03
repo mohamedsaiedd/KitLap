@@ -13,7 +13,6 @@ const cartReducer = (state = initaialState, action) => {
     let exist = false
     switch (action.type) {
 
-
         case "ADD_TO_CART":
 
             menuAccItems.push(newItem)
@@ -43,11 +42,7 @@ const cartReducer = (state = initaialState, action) => {
             }
 
         case "REMOVE_FROM_CART":
-            ////////////////////////////////////////////////////////
-            // The problem has been solved. Don't remove this code
-            // I have learned  JS
-            ////////////////////////////////////////////////////////
-
+        
             let forceToAdd = false
             let menuFilterItems = state.menuAccItems.filter(element => {
                 if(element.id !== newItem.id || forceToAdd) return true

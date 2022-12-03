@@ -5,10 +5,9 @@ import { Icon } from '@iconify/react';
 import { useSelector } from "react-redux"
 import CartIcon from '../components/cartIcon'
 import CartItem from './cartItem'
-import  Search  from './search'
+import Search from './search'
 
-const Header = (products) => {
-
+const Header = (product) => {
 
   const closeMenu = (e) => {
     e.target.closest(".dropdown").classList.remove("show");

@@ -84,8 +84,8 @@ export function Detailes(ItemCount) {
                   <li>&#10004; shipping</li>
                   <li>&#10004; product Description</li>
                   <li>&#10004; featuers </li>
-                  <li> Rating : 
-                  <Rating name="read-only" value={Math.floor(product.rating?.rate)}  precision={0.5} readOnly />
+                  <li> Rating :
+                    <Rating name="read-only" value={Math.floor(product.rating?.rate)} precision={0.5} readOnly />
                   </li>
                 </ul>
                 <br />

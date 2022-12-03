@@ -7,32 +7,18 @@ import MediaCard from '../shared/ItemCard';
 import { Grid } from '@material-ui/core';
 import { getByDisplayValue } from '@testing-library/react';
 import { useSelector } from "react-redux"
+import Test from './Test';
 
 
 export function Dashboard(ItemCount) {
   const [Products, SetProducts] = useState([])
-  useEffect(() => {
-    // product's images in api must be string value
-    // const url = "https://api.npoint.io/936050ffe8d488fcad58/products"
-    const url = "http://localhost:4000/products?_page=1"
-    
-    const fetchData = async () => {
-      
-      const response = await fetch(url);
-      const data = await response.json();
-      
-      // const data = JSON.parse(data1)
-      SetProducts(data);
-      
-    };
-    fetchData();
-    
-  }, []);
+
+
   const url = "http://localhost:4000/products?_page=1"
-  
-      const showMore = () => {
-        window.history.pushState(url , "http://localhost:4000/products?_page=2")
-      }
+
+  const showMore = () => {
+    window.history.pushState(url, "http://localhost:4000/products?_page=2")
+  }
 
   // console.log(Products)
 
@@ -107,10 +93,13 @@ export function Dashboard(ItemCount) {
             ))}
           </Grid>
 
+
           <br />
           <a onClick={showMore()}>
             load more
           </a>
+          <br />
+          <Test />
 
         </div>{/* row */}
       </div>{/* az-content-body */}

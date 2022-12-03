@@ -61,7 +61,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-server": "json-server --watch db.json --port 3000",
+    "start-server": "json-server --watch db.json --port 4000",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -71,7 +71,6 @@
     "extends": "react-app"
   },
   "browserslist": {
-    
     "production": [
       ">0.2%",
       "not dead",

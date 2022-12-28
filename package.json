@@ -49,7 +49,7 @@
     "react-rater": "^6.0.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
+    "react-scripts": "5.0.1",
     "react-select": "^3.0.8",
     "react-simplemde-editor": "^4.1.0",
     "redux": "^4.1.2",
